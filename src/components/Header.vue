@@ -89,13 +89,16 @@ header {
 	background-color: $primary-dark;
 }
 nav {
-	width: 90%;
+	width: 80%;
 	max-width: 120rem;
 
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	margin: 0 auto;
+	@media only screen and(max-width:$vp-8) {
+		width: 90%;
+	}
 	.hamburger-menu {
 		padding: 1rem 1.5rem;
 		position: fixed;

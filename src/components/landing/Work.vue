@@ -39,6 +39,9 @@
 				</div>
 			</div>
 		</div>
+		<router-link :to="{ name: 'WorkDetails' }" class="btn" tag="button"
+			>See more projects</router-link
+		>
 	</div>
 </template>
 
@@ -49,54 +52,47 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-//animations on scroll
+//animation on scroll classes
 .heading-2.enter {
 	animation: up 0.8s ease-in-out forwards;
 }
 
 .project-one .project-right.enter,
-.project-three .project-right.enter {
-	animation: right 0.8s ease-in-out forwards;
-}
-.project-one .project-left.enter,
-.project-three .project-left.enter {
-	animation: left 0.8s ease-in-out forwards;
-}
-
-.project-two .project-right.enter {
-	animation: left 0.8s ease-in-out forwards;
-}
+.project-three .project-right.enter,
 .project-two .project-left.enter {
 	animation: right 0.8s ease-in-out forwards;
+	@media only screen and(max-width:$vp-9) {
+		animation: up 0.8s ease-in-out forwards;
+	}
+}
+.project-one .project-left.enter,
+.project-three .project-left.enter,
+.project-two .project-right.enter {
+	animation: left 0.8s ease-in-out forwards;
+	@media only screen and(max-width:$vp-9) {
+		animation: up 0.8s ease-in-out forwards;
+	}
 }
 
 .work {
-	width: 90%;
+	width: 80%;
 	max-width: 120rem;
 	margin: 0 auto;
 	background-color: $secondary;
 	display: grid;
 	grid-template-columns: repeat(12, 1fr);
+	@media only screen and(max-width:$vp-8) {
+		width: 90%;
+	}
 }
 
 .heading-2 {
-	grid-column: 1 / -1;
-	grid-row: 1 / 2;
-	position: relative;
-	&::after {
-		content: '';
-		position: absolute;
-		top: 3.5rem;
-		left: 0;
-		height: 5px;
-		width: 6rem;
-		border-radius: 1rem;
-		background-color: $accent;
-	}
+	@include sectionHeading;
 }
 
 .projects {
 	padding-top: 10rem;
+	padding-bottom: 5rem;
 	grid-column: 1 / -1;
 	grid-row: 2 / -1;
 	& > *:not(:last-child) {
@@ -133,7 +129,7 @@ export default {
 		border-radius: 3px;
 		background-color: $primary;
 		flex: 1.4;
-
+		overflow: hidden;
 		width: 100%;
 
 		img {
@@ -149,9 +145,11 @@ export default {
 		flex-direction: column;
 	}
 }
-</style>
-<style lang="scss" module>
-.enter {
-	animation: left 1s ease-in-out forwards;
+.btn {
+	justify-self: center;
+	grid-column: 1 / -1;
+	width: 75%;
+	max-width: 27.5rem;
+	padding: 1.8rem;
 }
 </style>

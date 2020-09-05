@@ -50,29 +50,20 @@ export default {};
 }
 
 .skills {
-	width: 90%;
+	width: 80%;
 	max-width: 120rem;
 	margin: 0 auto;
 	background-color: $primary;
 
 	display: grid;
 	grid-template-columns: repeat(11, 1fr);
+	@media only screen and(max-width:$vp-8) {
+		width: 90%;
+	}
 }
 
 .heading-2 {
-	grid-column: 1 / -1;
-	grid-row: 1 / 2;
-	position: relative;
-	&::after {
-		content: '';
-		position: absolute;
-		top: 3.5rem;
-		left: 0;
-		height: 5px;
-		width: 6rem;
-		border-radius: 1rem;
-		background-color: $accent;
-	}
+	@include sectionHeading;
 }
 .skills-container {
 	padding-top: 10rem;
@@ -115,9 +106,15 @@ export default {};
 	&-three {
 		grid-column: 9 / -1;
 	}
+	&-one:hover,
+	&-two:hover,
+	&-three:hover {
+		background-color: $secondary-light;
+	}
 	&-one,
 	&-two,
 	&-three {
+		transition: all 0.2s ease-out;
 		@media only screen and(max-width:$vp-9) {
 			grid-column: 1 / -1;
 		}

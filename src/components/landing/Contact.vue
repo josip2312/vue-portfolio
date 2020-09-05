@@ -40,7 +40,7 @@
 						name="message"
 						id="message"
 						cols="10"
-						rows="5"
+						rows="6"
 					></textarea>
 				</div>
 				<div class="form-group">
@@ -60,14 +60,16 @@ export default {};
 
 <style lang="scss" scoped>
 .contact {
-	width: 90%;
+	width: 80%;
 	max-width: 120rem;
 	margin: 0 auto;
 	background-color: $secondary;
 
 	display: flex;
 	align-items: stretch;
+	justify-content: space-between;
 	@media only screen and(max-width:$vp-8) {
+		width: 90%;
 		flex-direction: column;
 	}
 }
@@ -80,6 +82,7 @@ export default {};
 		flex-direction: row;
 		padding-bottom: 5rem;
 	}
+
 	@media only screen and(max-width:$vp-6) {
 		flex-direction: column;
 	}
@@ -122,8 +125,9 @@ export default {};
 	.form {
 		display: flex;
 		flex-direction: column;
-		align-items: center;
+		//align-items: flex-end;
 		justify-content: flex-start;
+		width: 100%;
 
 		.form-top {
 			width: 100%;
@@ -147,6 +151,7 @@ export default {};
 			}
 			input {
 				font-family: 'Raleway', sans-serif;
+				font-size: 1.6rem;
 				color: $font-secondary;
 				padding: 1rem 1rem;
 				width: 100%;
@@ -157,6 +162,7 @@ export default {};
 				margin-bottom: 1.5rem;
 			}
 			textarea {
+				font-size: 1.6rem;
 				border-radius: 3px;
 				color: #0d0d0d;
 				background-color: $primary;
@@ -168,7 +174,7 @@ export default {};
 
 			input:focus,
 			textarea:focus {
-				outline: 1px solid #fffffe;
+				outline: 1px solid #717388;
 			}
 		}
 		.btn {

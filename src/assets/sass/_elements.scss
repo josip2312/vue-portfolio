@@ -32,3 +32,19 @@ a {
 	text-decoration: none;
 	color: $font-primary;
 }
+
+@mixin sectionHeading {
+	grid-column: 1 / -1;
+	grid-row: 1 / 2;
+	position: relative;
+	&::after {
+		content: '';
+		position: absolute;
+		top: 4rem;
+		left: 0;
+		height: 5px;
+		width: 6rem;
+		border-radius: 1rem;
+		background-color: $accent;
+	}
+}

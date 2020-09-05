@@ -22,16 +22,19 @@ export default {
 
 <style lang="scss" scoped>
 .showcase {
-	width: 90%;
+	width: 80%;
 	max-width: 120rem;
 	height: 100%;
 	margin: 0 auto;
 	background-color: $primary;
 
 	display: grid;
-
 	grid-template-columns: repeat(12, 1fr);
 	grid-template-rows: repeat(6, 1fr);
+
+	@media only screen and(max-width:$vp-8) {
+		width: 90%;
+	}
 }
 
 .left {

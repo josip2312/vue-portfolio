@@ -39,9 +39,12 @@ export default {};
 	min-height: 25vh;
 	padding: 2.5rem 0;
 	background-color: $primary-dark;
+	@media only screen and(max-width:$vp-6) {
+		padding-bottom: 10vh;
+	}
 }
 .footer-social {
-	flex: 1;
+	flex: 1.5;
 	display: flex;
 	align-items: center;
 	justify-content: space-around;
