@@ -1,0 +1,2 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["FormFailure"],{"6f36":function(n,t,o){"use strict";o.r(t);var e=function(){var n=this,t=n.$createElement,o=n._self._c||t;return o("div",[o("h1",[n._v("Oops, looks like something went wrong!")]),o("router-link",{attrs:{to:"/"}},[o("button",[n._v("Back to form")])])],1)},r=[],i={name:"SubmissionFail"},l=i,s=o("2877"),u=Object(s["a"])(l,e,r,!1,null,null,null);t["default"]=u.exports}}]);
+//# sourceMappingURL=FormFailure.25a4e3e9.js.map
