@@ -47,14 +47,14 @@
 		</div>
 		<div class="contact-right" v-scrollanimation>
 			<form
-				@submit.prevent="handleSubmit"
 				class="form"
 				name="contact-form"
 				method="post"
 				data-netlify="true"
 				data-netlify-honeypot="bot-field"
+				@submit.prevent="handleSubmit"
 			>
-				<input type="hidden" name="form-name" value="contact-form" />
+				<!-- <input type="hidden" name="form-name" value="contact-form" /> -->
 
 				<div class="form-top">
 					<div class="form-group">
@@ -129,7 +129,7 @@ export default {
 				await axios.post(
 					'/',
 					this.encode({
-						'form-name': 'contact',
+						'form-name': 'contact-form',
 						...this.form,
 					}),
 					axiosConfig,
