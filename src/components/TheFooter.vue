@@ -1,26 +1,18 @@
 <template>
 	<footer class="footer">
 		<div class="footer-social">
-			<img src="../assets/images/icons/github.svg" alt="" />
-			<img src="../assets/images/icons/ig.svg" alt="" />
-			<img src="../assets/images/icons/linkedin.svg" alt="" />
+			<a href="#">
+				<img src="../assets/images/icons/github.svg" alt="" />
+			</a>
+			<a href="#">
+				<img src="../assets/images/icons/ig.svg" alt="" />
+			</a>
+			<a href="#">
+				<img src="../assets/images/icons/linkedin.svg" alt="" />
+			</a>
 		</div>
 		<div class="footer-copyright">
 			Developed and designed by Josip Ivancic &copy;
-			<!-- <span>
-				Icons made by
-			</span>
-			<a
-				href="https://www.flaticon.com/authors/dinosoftlabs"
-				title="DinosoftLabs"
-				>DinosoftLabs</a
-			>
-			<span>
-				from
-			</span>
-			<a href="https://www.flaticon.com/" title="Flaticon">
-				www.flaticon.com</a
-			> -->
 		</div>
 	</footer>
 </template>
@@ -38,7 +30,7 @@ export default {};
 	justify-content: center;
 	min-height: 25vh;
 	padding: 2.5rem 0;
-	background-color: $primary-dark;
+	background-color: var(--primary-dark);
 	@media only screen and(max-width:$vp-6) {
 		padding-bottom: 10vh;
 	}
@@ -60,7 +52,7 @@ export default {};
 .footer-copyright {
 	display: flex;
 	align-items: center;
-	color: $font-secondary;
+	color: var(--font-secondary);
 	flex: 1;
 }
 </style>

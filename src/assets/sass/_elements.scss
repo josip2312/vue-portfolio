@@ -1,50 +1,48 @@
 .btn {
+	display: inline-block;
 	text-decoration: none;
 	border: 0;
-	border-radius: 0.3rem;
-	background-color: $accent;
-	padding: 1.2rem 2rem;
-	color: #382608;
+	border-radius: 0.5rem;
+	background-color: var(--accent);
+	padding: 0.8em 1.4em;
+	color: #271f06;
 	font-family: 'Raleway', sans-serif;
-	font-size: 1.8rem;
-	font-weight: 500 !important;
-	outline: none;
+
 	cursor: pointer;
-	transition: all 0.2s ease-out;
+	transition: opacity 200ms ease-in-out;
 	text-transform: uppercase;
 	text-align: center;
 	font-weight: 500;
 }
 .btn-sec {
-	background-color: $secondary;
-	color: $font-primary;
+	background-color: var(--secondary);
+	color: var(--font-primary);
 }
 .btn-sec:hover {
-	background-color: rgba($secondary, 0.7) !important;
+	opacity: 0.9;
 }
 .btn:hover {
-	background-color: rgba($accent, 0.8);
+	opacity: 0.9;
 }
-.btn:focus {
-	outline: 1px solid #fffffe;
-}
+
 a {
 	text-decoration: none;
-	color: $font-primary;
+	color: var(--font-primary);
 }
 
 @mixin sectionHeading {
 	grid-column: 1 / -1;
 	grid-row: 1 / 2;
 	position: relative;
+	letter-spacing: 4px;
 	&::after {
 		content: '';
 		position: absolute;
-		top: 4rem;
+		top: 3rem;
 		left: 0;
-		height: 5px;
-		width: 6rem;
+		height: 4px;
+		width: 4rem;
 		border-radius: 1rem;
-		background-color: $accent;
+		background-color: var(--accent);
 	}
 }

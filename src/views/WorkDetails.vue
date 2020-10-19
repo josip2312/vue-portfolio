@@ -103,7 +103,7 @@ export default {};
 
 <style lang="scss" scoped>
 #work-details {
-	background-color: $secondary;
+	background-color: var(--secondary);
 	padding: 7.5rem 0;
 	min-height: 91vh;
 }
@@ -157,7 +157,7 @@ export default {};
 	}
 
 	&-desc {
-		color: $font-secondary;
+		color: var(--font-secondary);
 	}
 
 	&-top {

@@ -1,27 +1,32 @@
 <template>
 	<div id="app">
-		<Header />
-		<router-view />
-		<Footer />
+		<TheHeader />
+		<div class="wrap">
+			<transition name="fade" mode="out-in">
+				<router-view />
+			</transition>
+		</div>
+		<TheFooter />
 	</div>
 </template>
 
 <script>
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
+import TheHeader from '@/components/TheHeader';
+import TheFooter from '@/components/TheFooter';
 
 export default {
 	name: 'App',
 	components: {
-		Header,
-		Footer,
+		TheHeader,
+		TheFooter,
 	},
 };
 </script>
 
 <style lang="scss">
-@import 'assets/sass/base';
-
-.before-enter {
+.wrap {
+	min-height: 90vh;
+	background-color: var(--primary);
 }
+@import 'assets/sass/base';
 </style>

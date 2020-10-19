@@ -3,6 +3,9 @@ const observer = new IntersectionObserver((entries, observer) => {
 		if (entry.isIntersecting) {
 			entry.target.classList.add('enter');
 			observer.unobserve(entry.target);
+			setTimeout(() => {
+				entry.target.classList.remove('enter', 'before-enter');
+			}, 800);
 		}
 	});
 });

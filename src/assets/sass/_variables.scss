@@ -1,0 +1,31 @@
+:root {
+	--primary: #323444;
+
+	--primary-dark: #1e1f2c;
+
+	--secondary: #282937;
+
+	--secondary-light: #2b2c3b;
+
+	--accent: #f3bd29;
+	--font-primary: #fffffe;
+	--font-secondary: #b8bde4;
+}
+.light-mode {
+	--primary: #f7fcff;
+	--primary-dark: #e0e4e9;
+	--secondary: #e4eff0;
+	--secondary-light: #e5f6f8;
+
+	--accent: #f7c523;
+
+	--font-primary: #141414;
+	--font-secondary: #444343;
+}
+$vp-4k: 120em; // 1920px
+$vp-17: 105rem; ////1680px
+$vp-14: 85.375em; //1366px
+$vp-9: 56.25rem; //900px
+$vp-8: 48rem; // 768px
+$vp-6: 35.5em; //568px
+$vp-3: 20em; //320px

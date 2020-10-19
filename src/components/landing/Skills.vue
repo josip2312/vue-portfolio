@@ -3,57 +3,68 @@
 		<div class="heading-2" v-scrollanimation>Skills</div>
 
 		<div class="skills-container">
-			<div class="skill skill-one" v-scrollanimation>
-				<div class="icon">
-					<img src="@/assets/images/icons/frontend.svg" alt="" />
-				</div>
-				<div class="skill-desc">
-					<h4 class="heading-4">
-						Frontend
-					</h4>
-					Lorem ipsum dolor sit amet consectetur adipisicing.
-				</div>
-			</div>
-			<div class="skill skill-two" v-scrollanimation>
-				<div class="icon">
-					<img src="@/assets/images/icons/backend.svg" alt="" />
-				</div>
-				<div class="skill-desc">
-					<h4 class="heading-4">
-						Backend
-					</h4>
-					Lorem ipsum dolor sit amet consectetur adipisicing.
-				</div>
-			</div>
-			<div class="skill skill-three" v-scrollanimation>
-				<div class="icon">
-					<img src="@/assets/images/icons/design.svg" alt="" />
-				</div>
-				<div class="skill-desc">
-					<h4 class="heading-4">
-						Web Design
-					</h4>
-					Lorem ipsum dolor sit amet consectetur adipisicing.
-				</div>
-			</div>
+			<SkillSingle
+				v-for="(skill, index) in skills"
+				:key="index"
+				:skill="skill"
+			/>
 		</div>
 	</div>
 </template>
 
 <script>
-export default {};
+import SkillSingle from '@/components/layout/SkillSingle';
+export default {
+	name: 'Skills',
+	components: {
+		SkillSingle,
+	},
+	data() {
+		return {
+			skills: [
+				{
+					title: 'Frontend',
+					description: 'HTML, CSS, SCSS, JavaScript, Vue.js',
+					imgSrc: require('@/assets/images/icons/frontend.svg'),
+					svgSrc: `<svg class="w-6 h-6" fill="none" stroke="var(--font-primary)" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>`,
+					class: 'skill-one',
+					isExpanded: false,
+				},
+				{
+					title: 'Backend',
+					description: 'Node.js, Express, MongoDB',
+					imgSrc: require('@/assets/images/icons/backend.svg'),
+					class: 'skill-two',
+					isExpanded: false,
+				},
+				{
+					title: 'Web Design',
+					description: 'Figma and awesome resources',
+					imgSrc: require('@/assets/images/icons/design.svg'),
+					class: 'skill-three',
+					isExpanded: false,
+				},
+			],
+		};
+	},
+};
 </script>
 
 <style lang="scss" scoped>
-.enter {
-	animation: up 0.8s ease-in-out forwards;
+.before-enter {
+	opacity: 0;
+	transform: translateY(5rem);
+	transition: transform 800ms ease-in-out, opacity 800ms ease-in-out;
 }
-
+.enter {
+	opacity: 1;
+	transform: translateY(0);
+}
 .skills {
 	width: 80%;
 	max-width: 120rem;
 	margin: 0 auto;
-	background-color: $primary;
+	background-color: var(--primary);
 
 	display: grid;
 	grid-template-columns: repeat(11, 1fr);
@@ -74,50 +85,5 @@ export default {};
 	display: grid;
 	row-gap: 2.5rem;
 	grid-template-columns: repeat(11, 1fr);
-}
-.skill {
-	background-color: $secondary;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: space-around;
-	padding: 3rem 2rem;
-	.icon {
-		img {
-			width: 7.5rem;
-			height: 7.5rem;
-		}
-	}
-	&-desc {
-		max-width: 30rem;
-		color: $font-secondary;
-		text-align: center;
-
-		.heading-4 {
-			margin-bottom: 1rem;
-		}
-	}
-	&-one {
-		grid-column: 1 / 4;
-	}
-	&-two {
-		grid-column: 5 / 8;
-	}
-	&-three {
-		grid-column: 9 / -1;
-	}
-	&-one:hover,
-	&-two:hover,
-	&-three:hover {
-		background-color: $secondary-light;
-	}
-	&-one,
-	&-two,
-	&-three {
-		transition: all 0.2s ease-out;
-		@media only screen and(max-width:$vp-9) {
-			grid-column: 1 / -1;
-		}
-	}
 }
 </style>

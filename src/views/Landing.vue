@@ -35,18 +35,23 @@ export default {
 <style lang="scss" scoped>
 #showcase {
 	height: 91vh;
-	background-color: $primary;
+	background-color: var(--primary);
+	transition: background 300ms ease-in-out;
+	@media only screen and(max-width:$vp-6) {
+		height: 86vh;
+	}
 }
 #work {
-	background-color: $secondary;
+	background-color: var(--secondary);
 	padding: 7.5rem 0;
+	transition: background 300ms ease-in-out;
 }
 #skills {
 	padding: 7.5rem 0;
-	background-color: $primary;
+	background-color: var(--primary);
 }
 #contact {
 	padding: 7.5rem 0;
-	background-color: $secondary;
+	background-color: var(--secondary);
 }
 </style>
