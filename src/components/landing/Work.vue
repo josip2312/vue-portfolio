@@ -34,7 +34,7 @@ export default {
 						'Project made for the final assignment on my university.',
 					paragraphTwo:
 						'A carpooling application built using the MEVN stack, MongoDB, Express, Vue  and Node.js',
-					imgSrc: require('@/assets/images/4.jpg'),
+					imgSrc: require('@/assets/images/studentrides.jpg'),
 					link: 'https://studentrides.tk/',
 					class: 'project-one',
 				},
@@ -44,7 +44,7 @@ export default {
 						'Site for a local hunting agency still in progress.',
 					paragraphTwo:
 						'A simple landing website built with Vue, uses prerendering and lazy-loading images.',
-					imgSrc: require('@/assets/images/4.jpg'),
+					imgSrc: require('@/assets/images/sljuka.jpg'),
 					link: 'https://suspicious-bardeen-eb4d7a.netlify.app',
 					class: 'project-two',
 				},
@@ -54,7 +54,7 @@ export default {
 						'Apartment reservations website for a university project.',
 					paragraphTwo:
 						'A simple website using HTML, SASS and Vanilla JavaScript on the frontend and PHP on the backend.',
-					imgSrc: require('@/assets/images/4.jpg'),
+					imgSrc: require('@/assets/images/mostan.jpg'),
 					link: 'http://studenti.sum.ba:82/2019/g13/views/',
 
 					class: 'project-three',

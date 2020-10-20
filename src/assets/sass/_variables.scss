@@ -9,20 +9,20 @@
 
 	--accent: #f3bd29;
 	--font-primary: #fffffe;
-	--font-secondary: #b8bde4;
+	--font-secondary: #cbcfe9;
 }
 .light-mode {
 	--primary: #f7fcff;
-	--primary-dark: #e0e4e9;
+	--primary-dark: #d9e2f0;
 	--secondary: #e4eff0;
 	--secondary-light: #e5f6f8;
 
 	--accent: #f7c523;
 
-	--font-primary: #141414;
-	--font-secondary: #444343;
+	--font-primary: #1f1f22;
+	--font-secondary: #474646;
 }
-$vp-4k: 120em; // 1920px
+$vp-4k: 125em; // 2000px
 $vp-17: 105rem; ////1680px
 $vp-14: 85.375em; //1366px
 $vp-9: 56.25rem; //900px

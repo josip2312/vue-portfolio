@@ -32,7 +32,7 @@ export default {
 				},
 				{
 					title: 'Backend',
-					description: 'Node.js, Express, MongoDB',
+					description: 'Node.js, Express, Socket.io, MongoDB',
 					imgSrc: require('@/assets/images/icons/backend.svg'),
 					class: 'skill-two',
 					isExpanded: false,
@@ -83,7 +83,7 @@ export default {
 	grid-row: 2 / -1;
 
 	display: grid;
-	row-gap: 2.5rem;
+	row-gap: 3.5rem;
 	grid-template-columns: repeat(11, 1fr);
 }
 </style>

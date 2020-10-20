@@ -1,22 +1,9 @@
 <template>
 	<div class="showcase">
-		<button
-			class="toggleLightMode "
-			@click.prevent="toggleLightMode"
-			aria-label="Toggle light mode"
-		>
-			<svg width="24" height="24" viewBox="0 0 24 24">
-				<path
-					fill="var(--font-primary)"
-					d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10v-20zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12z"
-				/>
-			</svg>
-		</button>
-
 		<div class="left">
 			<h1 class="heading-1">Delivering Quality</h1>
 			<div class="desc">
-				Hi, I'm a web developer passionate about building beautiful and
+				Hi, I'm a web developer passionate about creating beautiful and
 				functional websites
 			</div>
 			<div class="buttons">
@@ -1224,37 +1211,6 @@
 <script>
 export default {
 	name: 'Showcase',
-	data() {
-		return {
-			lightModeToggled: localStorage.getItem('light-mode'),
-		};
-	},
-	methods: {
-		toggleLightMode() {
-			let lightMode = localStorage.getItem('light-mode');
-
-			if (lightMode !== 'enabled') {
-				this.enableLightMode();
-			} else {
-				this.disableLightMode();
-			}
-		},
-		enableLightMode() {
-			this.lightModeToggled = !this.lightModeToggled;
-			document.body.classList.add('light-mode');
-			localStorage.setItem('light-mode', 'enabled');
-		},
-		disableLightMode() {
-			this.lightModeToggled = !this.lightModeToggled;
-			document.body.classList.remove('light-mode');
-			localStorage.setItem('light-mode', null);
-		},
-	},
-	mounted() {
-		if (localStorage.getItem('light-mode') === 'enabled') {
-			this.enableLightMode();
-		}
-	},
 };
 </script>
 
@@ -1323,6 +1279,7 @@ export default {
 		width: 100%;
 		z-index: 1;
 	}
+
 	#rest,
 	#desk,
 	#man,
@@ -1339,36 +1296,12 @@ export default {
 	#laptop {
 		animation: right 500ms ease forwards 1500ms;
 	}
+
 	@media only screen and(max-width:$vp-9) {
 		transform: scale(1.1);
-
 		justify-self: center;
 		grid-row: 3 / -1;
 		grid-column: 1 / -1;
-	}
-}
-.toggleLightMode {
-	z-index: 50;
-	position: absolute;
-	right: 0rem;
-	top: 1.5rem;
-	background: none;
-	border: none;
-
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	padding: 0.5rem;
-
-	cursor: pointer;
-
-	svg {
-		width: 2.5rem;
-		height: 2.5rem;
-		transition: transform 200ms ease;
-	}
-	svg:hover {
-		transform: scale(1.1);
 	}
 }
 </style>
