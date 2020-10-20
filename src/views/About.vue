@@ -10,15 +10,15 @@
 				<div class="about-heading spacing">
 					<h2 class="heading-2">About me</h2>
 					<p class="about-bio">
-						Lorem, ipsum dolor sit amet consectetur adipisicing
-						elit. In nobis perferendis beatae. Aliquid in iste
-						aperiam officia non reprehenderit libero?
+						Lorem ipsum dolor sit amet consectetur adipisicing elit.
+						Praesentium sapiente aperiam molestiae eos earum porro
+						fugit nisi ad ex. Quibusdam.
 					</p>
 					<p>
 						Lorem ipsum dolor sit amet consectetur adipisicing elit.
 						Doloribus, ipsa!
 					</p>
-					<div href="">Github</div>
+					<div href="">Lorem, ipsum dolor.</div>
 				</div>
 			</div>
 		</section>

@@ -1,5 +1,5 @@
 <template>
-	<div class="project" :class="project.class">
+	<div class="project" :class="project.class" v-scrollanimation>
 		<div class="project-left" v-scrollanimation>
 			<h3 class="heading-3">{{ project.title }}</h3>
 			<p class="project-desc">
@@ -51,7 +51,6 @@ export default {
 
 		@media only screen and(max-width:$vp-9) {
 			text-align: center;
-
 			margin-bottom: 3rem;
 		}
 
@@ -60,20 +59,25 @@ export default {
 		}
 	}
 	&-right {
-		border-radius: 3px;
+		border-radius: 1rem;
 		background-color: var(--primary);
 
 		flex: 1.2;
 
 		img {
 			width: 100%;
-
 			height: 100%;
 			object-fit: cover;
+			border-radius: 0.5rem;
+			transition: opacity 200ms ease-in-out;
+		}
+		img:hover {
+			opacity: 0.9;
 		}
 	}
 	@media only screen and(max-width:$vp-9) {
 		&-desc {
+			max-width: 40ch;
 			margin-right: 0;
 		}
 	}
@@ -82,63 +86,58 @@ export default {
 	flex-direction: row-reverse;
 	.project-left {
 		margin-left: 2.5rem;
-		text-align: center;
+	}
+	.heading-3 {
+		margin-left: 3rem;
+		max-width: 35ch;
 	}
 	.project-desc {
-		margin: 0 auto !important;
+		margin-left: 3rem;
 	}
 
 	@media only screen and(max-width:$vp-9) {
+		flex-direction: column;
+		&-desc {
+			margin-right: 0 !important;
+		}
 		.project-left {
 			margin-left: 0;
+			& > * {
+				margin-left: 0;
+				margin-right: 0;
+			}
 		}
+	}
+}
+
+//class for displaying all projects the same way in WorkDetails view
+.not-reverse {
+	flex-direction: row;
+	.project-left {
+		margin-left: 0;
+	}
+	.heading-3 {
+		margin-left: 0;
+		max-width: 35ch;
+	}
+	.project-desc {
+		margin-left: 0;
+	}
+	@media only screen and(max-width:$vp-9) {
 		flex-direction: column;
 	}
 }
-
-//custom scroll animations
-.project-one .project-right.before-enter,
-.project-three .project-right.before-enter,
-.project-two .project-left.before-enter {
+.project-one.before-enter,
+.project-three.before-enter,
+.project-two.before-enter {
 	opacity: 0;
-	transform: translateX(5rem);
+	transform: translateY(5rem);
 	transition: transform 800ms ease-in-out, opacity 800ms ease-in-out;
-	@media only screen and(max-width:$vp-9) {
-		opacity: 0;
-		transform: translateY(5rem);
-		transition: transform 800ms ease-in-out, opacity 800ms ease-in-out;
-	}
 }
-.project-one .project-right.enter,
-.project-three .project-right.enter,
-.project-two .project-left.enter {
+.project-one.enter,
+.project-three.enter,
+.project-two.enter {
 	opacity: 1;
-	transform: translateX(0);
-	@media only screen and(max-width:$vp-9) {
-		opacity: 1;
-		transform: translateY(0);
-	}
-}
-.project-one .project-left.before-enter,
-.project-three .project-left.before-enter,
-.project-two .project-right.before-enter {
-	opacity: 0;
-	transform: translateX(-5rem);
-	transition: transform 800ms ease-in-out, opacity 800ms ease-in-out;
-	@media only screen and(max-width:$vp-9) {
-		opacity: 0;
-		transform: translateY(5rem);
-		transition: transform 800ms ease-in-out, opacity 800ms ease-in-out;
-	}
-}
-.project-one .project-left.enter,
-.project-three .project-left.enter,
-.project-two .project-right.enter {
-	opacity: 1;
-	transform: translateX(0);
-	@media only screen and(max-width:$vp-9) {
-		opacity: 1;
-		transform: translateY(0);
-	}
+	transform: translateY(0);
 }
 </style>

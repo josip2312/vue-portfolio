@@ -38,6 +38,7 @@
 </template>
 
 <script>
+/* eslint-disable */
 import ClickOutside from 'vue-click-outside';
 
 import TheMobileNav from '@/components/TheMobileNav';
@@ -173,7 +174,7 @@ nav {
 		display: flex;
 		justify-content: space-between;
 		list-style: none;
-
+		font-size: 1.7rem;
 		@media only screen and(max-width:$vp-6) {
 			transform: translateX(50vw);
 			transition: transform 250ms ease-in-out;

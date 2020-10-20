@@ -63,10 +63,11 @@ export default {
 	}
 	&-skills {
 		font-size: 1.8rem;
+		color: var(--font-secondary);
 	}
 	&-desc {
 		max-width: 30rem;
-		color: var(--font-secondary);
+
 		text-align: center;
 	}
 	&-one {

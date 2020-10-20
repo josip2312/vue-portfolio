@@ -22,7 +22,7 @@
 		transform: translateX(0rem);
 	}
 }
-/* @keyframes up {
+@keyframes up {
 	0% {
 		opacity: 0;
 		transform: translateY(5rem);
@@ -33,11 +33,11 @@
 
 		transform: translateY(0rem);
 	}
-} */
+}
 
 .fade-enter-active,
 .fade-leave-active {
-	transition-duration: 250ms;
+	transition-duration: 300ms;
 	transition-property: opacity;
 	transition-timing-function: ease-in-out;
 }
