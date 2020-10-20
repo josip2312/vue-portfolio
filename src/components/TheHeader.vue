@@ -4,21 +4,25 @@
 			<div class="logo">
 				Logo
 			</div>
-			<ul :class="{ isVisible: isVisible }">
+			<ul :class="{ isSidebarVisible: isSidebarVisible }">
 				<li>
-					<router-link :to="{ name: 'Landing' }" @click="hideSidebar"
+					<router-link
+						:to="{ name: 'Landing' }"
+						@click.native="hideSidebar"
 						>Home</router-link
 					>
 				</li>
 				<li>
 					<router-link
 						:to="{ name: 'WorkDetails' }"
-						@click="hideSidebar"
+						@click.native="hideSidebar"
 						>Work</router-link
 					>
 				</li>
 				<li>
-					<router-link :to="{ name: 'About' }" @click="hideSidebar"
+					<router-link
+						:to="{ name: 'About' }"
+						@click.native="hideSidebar"
 						>About me</router-link
 					>
 				</li>
@@ -29,7 +33,10 @@
 				@click="showSidebar"
 				v-click-outside="hideSidebar"
 			>
-				<span class="hamburger" :class="{ active: isVisible }"></span>
+				<span
+					class="hamburger"
+					:class="{ active: isSidebarVisible }"
+				></span>
 			</button>
 		</nav>
 
@@ -38,7 +45,6 @@
 </template>
 
 <script>
-/* eslint-disable */
 import ClickOutside from 'vue-click-outside';
 
 import TheMobileNav from '@/components/TheMobileNav';
@@ -51,17 +57,17 @@ export default {
 	data() {
 		return {
 			windowWidth: window.innerWidth,
-			isVisible: false,
+			isSidebarVisible: false,
 			currentRoute: '',
 		};
 	},
 
 	methods: {
 		showSidebar() {
-			this.isVisible = !this.isVisible;
+			this.isSidebarVisible = !this.isSidebarVisible;
 		},
 		hideSidebar() {
-			this.isVisible = false;
+			this.isSidebarVisible = false;
 		},
 		sendToIndex() {
 			this.$router.push({ name: 'Index' });
@@ -106,6 +112,7 @@ nav {
 	@media only screen and(max-width:$vp-8) {
 		width: 90%;
 	}
+	//hamburger menu
 	.nav-toggle {
 		display: none;
 		@media only screen and(max-width:$vp-6) {
@@ -126,6 +133,7 @@ nav {
 			position: relative;
 			display: block;
 		}
+		//hamburger animations
 		.hamburger,
 		.hamburger::before,
 		.hamburger::after {
@@ -160,7 +168,8 @@ nav {
 			transform: rotate(90deg) translate(-1rem);
 		}
 	}
-	.isVisible {
+
+	.isSidebarVisible {
 		opacity: 1;
 		transform: translateX(0);
 	}

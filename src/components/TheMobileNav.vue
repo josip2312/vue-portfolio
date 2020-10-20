@@ -87,11 +87,15 @@ export default {
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		transition: opacity 0.2s ease-out;
 
 		svg {
 			width: 3rem;
 			margin-right: 1rem;
 		}
+	}
+	a:hover {
+		opacity: 0.8;
 	}
 }
 </style>
