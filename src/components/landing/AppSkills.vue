@@ -84,7 +84,7 @@ export default {
 }
 .enter {
 	opacity: 1;
-	transform: translateY(0) scale(0.93);
+	transform: translateY(0) scale(1);
 }
 .heading-2.before-enter .before-enter {
 	opacity: 0;
