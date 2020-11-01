@@ -54,8 +54,6 @@
 				data-netlify-honeypot="bot-field"
 				@submit.prevent="handleSubmit"
 			>
-				<!-- <input type="hidden" name="form-name" value="contact-form" /> -->
-
 				<div class="form-top">
 					<div class="form-group">
 						<label for="name">Name</label>
@@ -64,15 +62,19 @@
 							name="name"
 							id="name"
 							v-model="form.name"
+							required
+							autocomplete="on"
 						/>
 					</div>
 					<div class="form-group">
 						<label for="email">Email</label>
 						<input
-							type="text"
+							type="email"
 							name="email"
 							id="email"
 							v-model="form.email"
+							required
+							autocomplete="on"
 						/>
 					</div>
 				</div>
@@ -85,6 +87,9 @@
 						cols="10"
 						rows="6"
 						v-model="form.message"
+						required
+						minlength="10"
+						maxlength="200"
 					></textarea>
 				</div>
 				<div class="form-group">
@@ -161,9 +166,9 @@ export default {
 	background-color: var(--secondary);
 
 	display: flex;
-	align-items: stretch;
+
 	justify-content: space-between;
-	@media only screen and(max-width:$vp-8) {
+	@media only screen and(max-width:$vp-9) {
 		width: 90%;
 		flex-direction: column;
 	}
@@ -173,7 +178,7 @@ export default {
 	flex: 1;
 	display: flex;
 	flex-direction: column;
-	@media only screen and(max-width:$vp-8) {
+	@media only screen and(max-width:$vp-9) {
 		flex-direction: row;
 		padding-bottom: 5rem;
 	}
@@ -182,7 +187,7 @@ export default {
 		flex-direction: column;
 	}
 	.heading-3 {
-		margin-bottom: 1.5rem;
+		margin-bottom: 2rem;
 	}
 	.message {
 		color: var(--font-secondary);
@@ -201,11 +206,10 @@ export default {
 	.email {
 		display: flex;
 		align-items: center;
-		font-family: 'Lato', sans-serif;
+		font-weight: 500;
 
 		svg {
 			width: 3rem;
-
 			margin-right: 1rem;
 		}
 	}
@@ -235,7 +239,6 @@ export default {
 			width: 100%;
 			display: flex;
 			flex-direction: column;
-			justify-content: center;
 
 			label {
 				text-transform: uppercase;
@@ -244,34 +247,31 @@ export default {
 				margin-bottom: 1rem;
 			}
 			input {
-				font-family: 'Raleway', sans-serif;
-				font-size: 1.6rem;
 				color: var(--font-secondary);
 				padding: 1rem 1rem;
 				width: 100%;
 				border-radius: 3px;
 				border: none;
 				background-color: var(--primary);
-				transition: all 0.2s ease-out;
-				margin-bottom: 1.5rem;
+
+				margin-bottom: 2rem;
 			}
 			textarea {
-				font-size: 1.6rem;
 				border-radius: 3px;
 				color: var(--font-secondary);
 				background-color: var(--primary);
 				border: none;
 				padding: 1rem;
 				width: 100%;
-				margin-bottom: 1.5rem;
+				margin-bottom: 2rem;
 			}
 		}
 		.btn {
 			display: flex;
 			align-items: center;
 			justify-content: center;
-			width: 50%;
-			max-width: 15rem;
+			width: 100%;
+			max-width: 20rem;
 			img {
 				width: 2rem;
 				height: 2rem;

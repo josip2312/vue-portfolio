@@ -34,7 +34,7 @@ export default {
 						'Project made for the final assignment on my university.',
 					paragraphTwo:
 						'A carpooling application built using the MEVN stack, MongoDB, Express, Vue  and Node.js',
-					imgSrc: require('@/assets/images/studentrides.jpg'),
+					imgSrc: require('@/assets/images/studentrides.png'),
 					link: 'https://studentrides.tk/',
 					class: 'project-one',
 				},
@@ -44,7 +44,7 @@ export default {
 						'Site for a local hunting agency still in progress.',
 					paragraphTwo:
 						'A simple landing website built with Vue, uses prerendering and lazy-loading images.',
-					imgSrc: require('@/assets/images/sljuka.jpg'),
+					imgSrc: require('@/assets/images/sljuka.png'),
 					link: 'https://suspicious-bardeen-eb4d7a.netlify.app',
 					class: 'project-two',
 				},
@@ -54,7 +54,7 @@ export default {
 						'Apartment reservations website for a university project.',
 					paragraphTwo:
 						'A simple website using HTML, SASS and Vanilla JavaScript on the frontend and PHP on the backend.',
-					imgSrc: require('@/assets/images/mostan.jpg'),
+					imgSrc: require('@/assets/images/mostan.png'),
 					link: 'http://studenti.sum.ba:82/2019/g13/views/',
 
 					class: 'project-three',
@@ -82,20 +82,17 @@ export default {
 	}
 }
 
-.heading-2 {
-	@include sectionHeading;
-}
-
 .projects {
 	padding-top: 10rem;
 	padding-bottom: 5rem;
 
 	& > *:not(:last-child) {
-		margin-bottom: 10rem;
+		margin-bottom: 15rem;
 	}
 }
 
 .btn {
+	margin-top: 5rem;
 	align-self: center;
 	width: 85%;
 	max-width: 27.5rem;

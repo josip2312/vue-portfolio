@@ -1,31 +1,40 @@
 :root {
-	--primary: #323444;
+	--primary: #262a44;
+	--primary-500: #272c46;
+	--primary-dark: #1e202f;
 
-	--primary-dark: #1e1f2c;
+	--secondary: #22243a;
 
-	--secondary: #282937;
+	--secondary-light: #323552;
 
-	--secondary-light: #2b2c3b;
+	--tertiary: #3f4057;
 
-	--accent: #f3bd29;
+	--accent: #ffd600;
+
 	--font-primary: #fffffe;
+	--font-black: #1f1f22;
 	--font-secondary: #cbcfe9;
 }
 .light-mode {
-	--primary: #f7fcff;
-	--primary-dark: #d9e2f0;
-	--secondary: #e4eff0;
-	--secondary-light: #e5f6f8;
+	--primary: #f2f4f6;
+	--primary-500: #e2f1f6;
+	--primary-dark: #dae3f1;
+	--secondary: #e2e9ee;
+	--secondary-light: #d2e5e9;
+	--tertiary: #c0e3eb;
 
-	--accent: #f7c523;
+	--accent: #ffc11e;
 
 	--font-primary: #1f1f22;
 	--font-secondary: #474646;
 }
-$vp-4k: 125em; // 2000px
+
+$vp-25: 156.25em; // 2500px
+$vp-20: 125em; // 2000px
 $vp-17: 105rem; ////1680px
 $vp-14: 85.375em; //1366px
+$vp-12: 75em; //1200 px
 $vp-9: 56.25rem; //900px
 $vp-8: 48rem; // 768px
 $vp-6: 35.5em; //568px
-$vp-3: 20em; //320px
+$vp-3: 22.5em; //360px

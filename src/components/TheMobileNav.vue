@@ -1,5 +1,5 @@
 <template>
-	<div class="mobile-nav" v-if="isMobile">
+	<div class="mobile-nav">
 		<router-link :to="{ name: 'Landing' }">
 			<svg
 				class="w-6 h-6"
@@ -48,27 +48,14 @@
 <script>
 export default {
 	name: 'TheMobileNav',
-	data() {
-		return {
-			windowWidth: window.innerWidth,
-		};
-	},
-	computed: {
-		isMobile() {
-			return this.windowWidth <= 568;
-		},
-	},
-
-	mounted() {
-		window.addEventListener('resize', () => {
-			this.windowWidth = window.innerWidth;
-		});
-	},
 };
 </script>
 
 <style lang="scss" scoped>
 .mobile-nav {
+	@media only screen and(min-width:$vp-6 ) {
+		display: none;
+	}
 	display: flex;
 	justify-content: space-around;
 	align-items: center;

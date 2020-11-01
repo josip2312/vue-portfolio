@@ -1,6 +1,6 @@
 <template>
 	<div class="project" :class="project.class" v-scrollanimation>
-		<div class="project-left" v-scrollanimation>
+		<div class="project-left spacing-sm" v-scrollanimation>
 			<h3 class="heading-3">{{ project.title }}</h3>
 			<p class="project-desc">
 				{{ project.paragraphOne }}
@@ -55,24 +55,33 @@ export default {
 		}
 
 		.heading-3 {
-			margin-bottom: 2rem;
+			margin-bottom: 3rem;
 		}
 	}
 	&-right {
-		border-radius: 1rem;
-		background-color: var(--primary);
+		border-radius: 2rem;
+		background-color: var(--secondary-light);
 
+		padding: 2.5rem;
 		flex: 1.2;
-
+		@media only screen and(max-width:$vp-6) {
+			padding: 1rem;
+		}
 		img {
 			width: 100%;
 			height: 100%;
 			object-fit: cover;
-			border-radius: 0.5rem;
-			transition: opacity 200ms ease-in-out;
+			border-radius: 1rem;
+
+			backface-visibility: hidden;
+			transform: scale(0.975);
+			transition: opacity 200ms ease-in-out, transform 200ms ease-in-out;
 		}
 		img:hover {
-			opacity: 0.9;
+			transform: scale(1);
+			@media only screen and(max-width:$vp-6) {
+				transform: scale(0.975);
+			}
 		}
 	}
 	@media only screen and(max-width:$vp-9) {

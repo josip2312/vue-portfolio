@@ -19,14 +19,16 @@
 						>Work</router-link
 					>
 				</li>
-				<li>
+				<li class="about">
 					<router-link
 						:to="{ name: 'About' }"
 						@click.native="hideSidebar"
-						>About me</router-link
 					>
+						About me
+					</router-link>
 				</li>
 			</ul>
+			<LightModeButton />
 
 			<button
 				class="nav-toggle"
@@ -46,12 +48,14 @@
 
 <script>
 import ClickOutside from 'vue-click-outside';
+import LightModeButton from '@/components/LightModeButton';
 
 import TheMobileNav from '@/components/TheMobileNav';
 export default {
 	name: 'Header',
 	components: {
 		TheMobileNav,
+		LightModeButton,
 	},
 
 	data() {
@@ -81,6 +85,10 @@ export default {
 
 	mounted() {
 		this.popupItem = this.$el;
+		window.addEventListener('scroll', () => {
+			const header = document.querySelector('header');
+			header.classList.toggle('sticky', window.scrollY > 0);
+		});
 	},
 
 	directives: {
@@ -94,14 +102,22 @@ header {
 	display: flex;
 	align-items: center;
 
-	position: sticky;
+	position: fixed;
 	top: 0;
-	box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
-	background-color: var(--primary-dark);
-	transition: background 300ms ease-in-out;
+	left: 0;
+	right: 0;
+
+	background-color: transparent;
+
+	transition: background-color 300ms ease-in-out;
 	z-index: 100;
+	border-top: 3px solid var(--accent);
+}
+.sticky {
+	background-color: var(--primary-dark);
 }
 nav {
+	position: relative;
 	width: 80%;
 	max-width: 120rem;
 
@@ -119,12 +135,13 @@ nav {
 			display: inline-block;
 		}
 		position: absolute;
-		right: 5%;
+		right: 0%;
+		transform: translateX(5%);
 
 		border: 0;
 		outline: none;
 		border-radius: 0.25em 0 0 0.25em;
-		background-color: var(--primary-dark);
+		background-color: transparent;
 		padding: 1em 0.5em;
 		cursor: pointer;
 		z-index: 30;
@@ -176,7 +193,7 @@ nav {
 
 	.logo {
 		font-size: 2rem;
-		padding: 2rem 0;
+		padding: 1.5rem 0;
 	}
 
 	ul {
@@ -207,9 +224,10 @@ nav {
 			cursor: pointer;
 			transition: opacity 0.2s ease-out;
 
-			&:not(:last-child) {
+			& {
 				margin-right: 4rem;
 			}
+
 			a {
 				position: relative;
 				padding: 0.5rem 0;
@@ -217,8 +235,10 @@ nav {
 			a::after {
 				content: '';
 				position: absolute;
+
 				left: 0;
-				bottom: 0;
+
+				bottom: -1px;
 				height: 2px;
 				border-radius: 1rem;
 				width: 100%;
@@ -232,6 +252,9 @@ nav {
 				margin: 0 !important;
 				padding: 2.5rem 0;
 			}
+		}
+		.about {
+			margin-right: 0;
 		}
 		li:hover {
 			opacity: 0.8;

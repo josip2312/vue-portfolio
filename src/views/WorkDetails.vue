@@ -1,6 +1,7 @@
 <template>
 	<section id="work-details">
 		<div class="details">
+			<div class="heading-2">Work</div>
 			<div class="projects">
 				<div class="projects">
 					<ProjectSingle
@@ -39,7 +40,7 @@ export default {
 						'Project made for the final assignment on my university.',
 					paragraphTwo:
 						'A carpooling application built using the MEVN stack, MongoDB, Express, Vue  and Node.js',
-					imgSrc: require('@/assets/images/studentrides.jpg'),
+					imgSrc: require('@/assets/images/studentrides.png'),
 					link: 'https://studentrides.tk/',
 					class: 'project-one',
 				},
@@ -49,7 +50,7 @@ export default {
 						'Site for a local hunting agency still in progress.',
 					paragraphTwo:
 						'A simple landing website built with Vue, uses prerendering and lazy-loading images.',
-					imgSrc: require('@/assets/images/sljuka.jpg'),
+					imgSrc: require('@/assets/images/sljuka.png'),
 					link: 'https://suspicious-bardeen-eb4d7a.netlify.app',
 					class: 'project-two not-reverse',
 				},
@@ -59,7 +60,7 @@ export default {
 						'Apartment reservations website for a university project.',
 					paragraphTwo:
 						'A simple website using HTML, SASS and Vanilla JavaScript on the frontend and PHP on the backend.',
-					imgSrc: require('@/assets/images/mostan.jpg'),
+					imgSrc: require('@/assets/images/mostan.png'),
 					link: 'http://studenti.sum.ba:82/2019/g13/views/',
 					class: 'project-three',
 				},
@@ -71,9 +72,9 @@ export default {
 
 <style lang="scss" scoped>
 #work-details {
-	background-color: var(--secondary);
-	padding: 7.5rem 0;
-	min-height: 91vh;
+	background-color: var(--primary);
+	padding: 15rem 0;
+	min-height: 100vh;
 }
 .details {
 	width: 80%;
@@ -86,14 +87,15 @@ export default {
 		width: 90%;
 	}
 }
+.heading-2 {
+	margin-bottom: 10rem;
+}
 .projects {
-	& > * {
-		margin-bottom: 10rem;
+	& > *:not(:last-child) {
+		margin-bottom: 15rem;
 	}
 }
 .projects-2 {
-	& > *:not(:last-child) {
-		margin-bottom: 10rem;
-	}
+	margin-top: 15rem;
 }
 </style>
