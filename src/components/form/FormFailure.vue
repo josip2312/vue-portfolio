@@ -1,6 +1,6 @@
 <template>
 	<div class="wrapper">
-		<div class="success spacing">
+		<div class="success spacing-lg">
 			<div class="icon">
 				<svg
 					class="w-6 h-6"
@@ -42,7 +42,7 @@ export default {
 	align-items: center;
 	justify-content: center;
 
-	min-height: 91vh;
+	min-height: 100vh;
 }
 .success {
 	display: flex;
@@ -50,11 +50,11 @@ export default {
 	align-items: center;
 
 	text-align: center;
-	max-width: 60rem;
+	max-width: 70rem;
 	margin: 0 auto;
 	background-color: var(--secondary);
 	border-radius: 1rem;
-	padding: 5rem 2.5rem;
+	padding: 5rem 3.5rem;
 	animation: up 500ms ease-in-out forwards;
 
 	.icon {
@@ -77,7 +77,8 @@ export default {
 
 		p {
 			color: var(--font-secondary);
-			margin: 2rem 0;
+			font-size: 1.8rem;
+			margin: 2.5rem 0;
 		}
 	}
 }

@@ -7,7 +7,7 @@
 				</div>
 			</div>
 			<div class="about-right">
-				<div class="about-heading spacing">
+				<div class="about-heading spacing-lg">
 					<h2 class="heading-2">About me</h2>
 					<p class="about-bio">
 						Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -36,13 +36,13 @@ export default {
 	background-color: var(--primary);
 	display: flex;
 	justify-content: center;
-	min-height: 90vh;
+	min-height: 100vh;
 }
 .about {
 	display: flex;
 	justify-content: center;
 
-	padding: 7.5rem 0;
+	padding: 10rem 0;
 	width: 80%;
 	max-width: 120rem;
 	margin: 0 auto;
@@ -62,7 +62,6 @@ export default {
 		max-width: 50rem;
 		img {
 			width: 100%;
-
 			height: 100%;
 			object-fit: cover;
 		}
@@ -77,6 +76,9 @@ export default {
 	justify-content: center;
 	.about-heading {
 		max-width: 40rem;
+		.heading-2 {
+			margin-bottom: 5rem;
+		}
 	}
 }
 .about-left,

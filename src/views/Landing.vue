@@ -1,57 +1,52 @@
 <template>
 	<main id="landing">
 		<section id="showcase">
-			<Showcase />
+			<AppShowcase />
 		</section>
 		<section id="work">
-			<Work />
+			<AppWork />
 		</section>
 		<section id="skills">
-			<Skills />
+			<AppSkills />
 		</section>
 		<section id="contact">
-			<Contact />
+			<AppContact />
 		</section>
 	</main>
 </template>
 
 <script>
-import Showcase from '@/components/landing/Showcase';
-import Work from '@/components/landing/Work';
-import Skills from '@/components/landing/Skills';
-import Contact from '@/components/landing/Contact';
+import AppShowcase from '@/components/landing/AppShowcase';
+import AppWork from '@/components/landing/AppWork';
+import AppSkills from '@/components/landing/AppSkills';
+import AppContact from '@/components/landing/AppContact';
 
 export default {
 	name: 'Landing',
 	components: {
-		Showcase,
-		Work,
-		Skills,
-		Contact,
+		AppShowcase,
+		AppWork,
+		AppSkills,
+		AppContact,
 	},
 };
 </script>
 
 <style lang="scss" scoped>
 #showcase {
-	height: 91vh;
+	height: 100vh;
 	background-color: var(--primary);
-	transition: background 300ms ease-in-out;
-	@media only screen and(max-width:$vp-6) {
-		height: 86vh;
-	}
 }
 #work {
 	background-color: var(--secondary);
-	padding: 7.5rem 0;
-	transition: background 300ms ease-in-out;
+	padding: 10rem 0;
 }
 #skills {
-	padding: 7.5rem 0;
+	padding: 10rem 0;
 	background-color: var(--primary);
 }
 #contact {
-	padding: 7.5rem 0;
+	padding: 10rem 0;
 	background-color: var(--secondary);
 }
 </style>

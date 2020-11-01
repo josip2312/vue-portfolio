@@ -24,25 +24,21 @@ export default {
 			skills: [
 				{
 					title: 'Frontend',
-					description: 'HTML, CSS, SCSS, JavaScript, Vue.js',
+					skills: ['HTML', 'CSS', 'SCSS', 'JavaScript', 'Vue.js'],
 					imgSrc: require('@/assets/images/icons/frontend.svg'),
-					svgSrc: `<svg class="w-6 h-6" fill="none" stroke="var(--font-primary)" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>`,
 					class: 'skill-one',
-					isExpanded: false,
 				},
 				{
 					title: 'Backend',
-					description: 'Node.js, Express, Socket.io, MongoDB',
+					skills: ['Node.js', 'Express', 'Socket.io', 'MongoDB'],
 					imgSrc: require('@/assets/images/icons/backend.svg'),
 					class: 'skill-two',
-					isExpanded: false,
 				},
 				{
 					title: 'Web Design',
-					description: 'Figma and awesome resources',
+					skills: ['Figma', 'Dribbble', 'Behance', 'Resources'],
 					imgSrc: require('@/assets/images/icons/design.svg'),
 					class: 'skill-three',
-					isExpanded: false,
 				},
 			],
 		};
@@ -51,15 +47,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.before-enter {
-	opacity: 0;
-	transform: translateY(5rem);
-	transition: transform 800ms ease-in-out, opacity 800ms ease-in-out;
-}
-.enter {
-	opacity: 1;
-	transform: translateY(0);
-}
 .skills {
 	width: 80%;
 	max-width: 120rem;
@@ -68,22 +55,44 @@ export default {
 
 	display: grid;
 	grid-template-columns: repeat(11, 1fr);
+
 	@media only screen and(max-width:$vp-8) {
 		width: 90%;
 	}
 }
 
 .heading-2 {
-	@include sectionHeading;
+	grid-row: 1;
+	grid-column: 1;
 }
 .skills-container {
-	padding-top: 10rem;
+	padding-top: 7.5rem;
 	align-self: center;
 	grid-column: 1 / -1;
-	grid-row: 2 / -1;
+	grid-row: 2;
 
 	display: grid;
 	row-gap: 3.5rem;
 	grid-template-columns: repeat(11, 1fr);
+}
+
+//scroll animations
+.before-enter {
+	opacity: 0;
+	transform: translateY(5rem);
+	transition: transform 800ms ease-in-out, opacity 800ms ease-in-out;
+}
+.enter {
+	opacity: 1;
+	transform: translateY(0) scale(0.93);
+}
+.heading-2.before-enter .before-enter {
+	opacity: 0;
+	transform: translateY(5rem);
+	transition: transform 800ms ease-in-out, opacity 800ms ease-in-out;
+}
+.heading-2.enter {
+	opacity: 1;
+	transform: translateY(0);
 }
 </style>

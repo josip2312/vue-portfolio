@@ -1,6 +1,6 @@
 <template>
 	<div class="showcase">
-		<div class="left">
+		<div class="left spacing">
 			<h1 class="heading-1">Delivering Quality</h1>
 			<div class="desc">
 				Hi, I'm a web developer passionate about creating beautiful and
@@ -1232,14 +1232,13 @@ export default {
 }
 
 .left {
-	grid-column: 1 / 8;
+	grid-column: 1 / -1;
 	grid-row: 2 / 5;
 
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 
-	animation: down 1s ease-in-out forwards;
 	z-index: 10;
 	@media only screen and(max-width:$vp-9) {
 		grid-row: 1 / 5;
@@ -1248,25 +1247,45 @@ export default {
 		text-align: center;
 	}
 
-	& > *:not(:last-child) {
-		margin-bottom: 1.5rem;
-	}
 	.desc {
-		width: 75%;
+		width: 90%;
 		max-width: 35rem;
 		color: var(--font-secondary);
 	}
 	.buttons {
-		margin-top: 1.5rem;
+		margin-top: 4rem;
 		display: flex;
 		align-items: center;
 		justify-content: flex-start;
+		@media only screen and(max-width:$vp-3) {
+			flex-direction: column;
+		}
 		.btn-sec {
-			transition: background 350ms ease-in-out;
-			margin-left: 2rem;
+			margin-left: 2.5rem;
+			@media only screen and(max-width:$vp-3) {
+				margin-left: 0;
+				margin-top: 2.5rem;
+			}
 		}
 	}
 }
+
+//animations
+.left {
+	.heading-1 {
+		opacity: 0;
+		animation: left 500ms ease-in-out forwards;
+	}
+	.desc {
+		opacity: 0;
+		animation: left 500ms ease-in-out forwards 200ms;
+	}
+	.buttons {
+		opacity: 0;
+		animation: left 500ms ease-in-out forwards 400ms;
+	}
+}
+
 .right {
 	grid-column: 5 / -1;
 	grid-row: 1 / -1;
@@ -1275,7 +1294,7 @@ export default {
 	width: 100%;
 
 	svg {
-		transform: scale(1.1);
+		transform: scale(1.1) translateX(5rem);
 		width: 100%;
 		z-index: 1;
 	}
@@ -1288,17 +1307,20 @@ export default {
 	}
 	#rest,
 	#desk {
-		animation: right 1s ease forwards 1s;
+		animation: right 750ms ease forwards 750ms;
 	}
 	#man {
-		animation: right 500ms ease forwards 1500ms;
+		animation: right 500ms ease forwards 1250ms;
 	}
 	#laptop {
-		animation: right 500ms ease forwards 1500ms;
+		animation: right 500ms ease forwards 1250ms;
 	}
 
 	@media only screen and(max-width:$vp-9) {
-		transform: scale(1.1);
+		svg {
+			transform: scale(1.1) translateX(0);
+		}
+
 		justify-self: center;
 		grid-row: 3 / -1;
 		grid-column: 1 / -1;

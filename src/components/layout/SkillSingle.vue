@@ -1,10 +1,5 @@
 <template>
-	<div
-		class="skill spacing-sm"
-		:class="[{ expanded: isExpanded }, skill.class]"
-		v-scrollanimation
-		@click="expandSkills(skill)"
-	>
+	<div class="skill spacing" :class="skill.class" v-scrollanimation>
 		<div class="icon">
 			<img :src="skill.imgSrc" alt="" />
 		</div>
@@ -12,9 +7,9 @@
 			<h4 class="heading-4">
 				{{ skill.title }}
 			</h4>
-			<p class="skill-skills">
-				{{ skill.description }}
-			</p>
+			<span class="skill-tag" v-for="skill in skill.skills" :key="skill">
+				{{ skill }}
+			</span>
 		</div>
 	</div>
 </template>
@@ -22,11 +17,6 @@
 <script>
 export default {
 	name: 'SkillSingle',
-	data() {
-		return {
-			isExpanded: false,
-		};
-	},
 
 	props: {
 		skill: {
@@ -47,28 +37,46 @@ export default {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	justify-content: space-around;
+
 	background-color: var(--secondary);
 
 	padding: 3rem 2rem;
 
 	position: relative;
 
+	transform: scale(1);
+	backface-visibility: hidden;
+	transition: transform 200ms ease-in-out;
+	font-size: 1.8rem;
+	&-desc {
+		text-align: center;
+		.heading-4 {
+			font-size: 2.2rem;
+			margin-bottom: 2.5rem;
+		}
+	}
 	.icon {
 		img {
 			width: 7.5rem;
 			height: 7.5rem;
-			stroke: #fff;
 		}
 	}
-	&-skills {
-		font-size: 1.8rem;
+	&-tag {
+		display: inline-block;
+		background-color: var(--tertiary);
+		padding: 0.5rem 1.2rem;
+		margin: 0.75rem 0.75rem;
+		border-radius: 1rem;
+		font-weight: 500;
 		color: var(--font-secondary);
-	}
-	&-desc {
-		max-width: 30rem;
 
-		text-align: center;
+		transition: background-color 200ms ease-in-out;
+		transform: scale(0.89);
+		&:hover {
+			transform: scale(1);
+			background-color: var(--accent);
+			color: var(--font-black);
+		}
 	}
 	&-one {
 		grid-column: 1 / 4;
@@ -83,13 +91,16 @@ export default {
 	&-one,
 	&-two,
 	&-three {
-		@media only screen and(max-width: $vp-9) {
+		@media only screen and(max-width: $vp-12) {
 			grid-column: 1 / -1;
 		}
 	}
 }
 
 .skill:hover {
-	background-color: var(--secondary-light);
+	transform: scale(1.05);
+	@media only screen and(max-width: $vp-6) {
+		transform: scale(1);
+	}
 }
 </style>
