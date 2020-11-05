@@ -1,9 +1,9 @@
 <template>
 	<header>
 		<nav>
-			<div class="logo">
+			<router-link :to="{ name: 'Landing' }" class="logo">
 				Logo
-			</div>
+			</router-link>
 			<ul :class="{ isSidebarVisible: isSidebarVisible }">
 				<li>
 					<router-link
@@ -230,7 +230,11 @@ nav {
 
 			a {
 				position: relative;
+				font-weight: 500;
 				padding: 0.5rem 0;
+			}
+			a:hover::after {
+				transform: scale(1, 1);
 			}
 			a::after {
 				content: '';
@@ -255,9 +259,6 @@ nav {
 		}
 		.about {
 			margin-right: 0;
-		}
-		li:hover {
-			opacity: 0.8;
 		}
 	}
 }

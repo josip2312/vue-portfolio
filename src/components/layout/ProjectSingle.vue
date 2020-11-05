@@ -59,7 +59,7 @@ export default {
 		}
 	}
 	&-right {
-		border-radius: 2rem;
+		border-radius: 1rem;
 		background-color: var(--secondary-light);
 
 		padding: 2.5rem;
@@ -118,24 +118,10 @@ export default {
 		}
 	}
 }
-
-//class for displaying all projects the same way in WorkDetails view
-.not-reverse {
-	flex-direction: row;
-	.project-left {
-		margin-left: 0;
-	}
-	.heading-3 {
-		margin-left: 0;
-		max-width: 35ch;
-	}
-	.project-desc {
-		margin-left: 0;
-	}
-	@media only screen and(max-width:$vp-9) {
-		flex-direction: column;
-	}
+.project-right:focus {
+	outline: 1px solid var(--font-secondary);
 }
+
 .project-one.before-enter,
 .project-three.before-enter,
 .project-two.before-enter {

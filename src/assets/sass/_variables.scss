@@ -1,4 +1,5 @@
 :root {
+	--primary-300: #2d314e;
 	--primary: #262a44;
 	--primary-500: #272c46;
 	--primary-dark: #1e202f;
@@ -10,20 +11,25 @@
 	--tertiary: #3f4057;
 
 	--accent: #ffd600;
-
+	--accent-light: #f0e333;
+	--accent-2: #19fffc;
 	--font-primary: #fffffe;
 	--font-black: #1f1f22;
-	--font-secondary: #cbcfe9;
+
+	--font-secondary: #d9dcec;
 }
 .light-mode {
-	--primary: #f2f4f6;
+	--primary-300: #fcfcfc;
+
+	--primary: #e9eef3;
 	--primary-500: #e2f1f6;
-	--primary-dark: #dae3f1;
-	--secondary: #e2e9ee;
+	--primary-dark: #c7e4ee;
+	--secondary: #dde6ee;
 	--secondary-light: #d2e5e9;
 	--tertiary: #c0e3eb;
 
-	--accent: #ffc11e;
+	--accent: #eec925;
+	--accent-light: #3b3939;
 
 	--font-primary: #1f1f22;
 	--font-secondary: #474646;
@@ -33,7 +39,7 @@ $vp-25: 156.25em; // 2500px
 $vp-20: 125em; // 2000px
 $vp-17: 105rem; ////1680px
 $vp-14: 85.375em; //1366px
-$vp-12: 75em; //1200 px
+$vp-12: 75em; //1200px
 $vp-9: 56.25rem; //900px
 $vp-8: 48rem; // 768px
 $vp-6: 35.5em; //568px

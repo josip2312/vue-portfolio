@@ -1,5 +1,5 @@
 <template>
-	<div class="work">
+	<div class="work container">
 		<h2 class="heading-2" v-scrollanimation>
 			Work
 		</h2>
@@ -71,9 +71,6 @@ export default {
 }
 
 .work {
-	width: 80%;
-	max-width: 120rem;
-	margin: 0 auto;
 	display: flex;
 	flex-direction: column;
 

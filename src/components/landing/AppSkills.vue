@@ -1,5 +1,5 @@
 <template>
-	<div class="skills">
+	<div class="skills container">
 		<div class="heading-2" v-scrollanimation>Skills</div>
 
 		<div class="skills-container">
@@ -25,19 +25,19 @@ export default {
 				{
 					title: 'Frontend',
 					skills: ['HTML', 'CSS', 'SCSS', 'JavaScript', 'Vue.js'],
-					imgSrc: require('@/assets/images/icons/frontend.svg'),
+					imgSrc: require('@/assets/icons/frontend.svg'),
 					class: 'skill-one',
 				},
 				{
 					title: 'Backend',
 					skills: ['Node.js', 'Express', 'Socket.io', 'MongoDB'],
-					imgSrc: require('@/assets/images/icons/backend.svg'),
+					imgSrc: require('@/assets/icons/backend.svg'),
 					class: 'skill-two',
 				},
 				{
 					title: 'Web Design',
 					skills: ['Figma', 'Dribbble', 'Behance', 'Resources'],
-					imgSrc: require('@/assets/images/icons/design.svg'),
+					imgSrc: require('@/assets/icons/design.svg'),
 					class: 'skill-three',
 				},
 			],
@@ -48,11 +48,7 @@ export default {
 
 <style lang="scss" scoped>
 .skills {
-	width: 80%;
-	max-width: 120rem;
-	margin: 0 auto;
 	background-color: var(--primary);
-
 	display: grid;
 	grid-template-columns: repeat(11, 1fr);
 

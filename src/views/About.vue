@@ -1,6 +1,6 @@
 <template>
 	<div class="about-container">
-		<section class="about">
+		<section class="about container">
 			<div class="about-left">
 				<div class="about-image">
 					<img src="@/assets/images/user.jpg" alt="" />
@@ -14,11 +14,24 @@
 						Praesentium sapiente aperiam molestiae eos earum porro
 						fugit nisi ad ex. Quibusdam.
 					</p>
-					<p>
+					<p class="about-bio">
 						Lorem ipsum dolor sit amet consectetur adipisicing elit.
 						Doloribus, ipsa!
 					</p>
-					<div href="">Lorem, ipsum dolor.</div>
+					<div class="about-links">
+						<a
+							href="https://github.com/josip2312"
+							target="_blank"
+							class="about-link"
+							>Github</a
+						>
+						<a
+							href="https://www.linkedin.com/in/josip-ivancic-b3521a1b4/"
+							target="_blank"
+							class="about-link"
+							>Linkedin</a
+						>
+					</div>
 				</div>
 			</div>
 		</section>
@@ -43,9 +56,6 @@ export default {
 	justify-content: center;
 
 	padding: 10rem 0;
-	width: 80%;
-	max-width: 120rem;
-	margin: 0 auto;
 
 	@media only screen and(max-width:$vp-8) {
 		width: 90%;
@@ -57,10 +67,10 @@ export default {
 	margin-right: 2.5rem;
 	align-self: center;
 	.about-image {
-		border-radius: 3px;
 		width: 100%;
 		max-width: 50rem;
 		img {
+			border-radius: 0.5rem;
 			width: 100%;
 			height: 100%;
 			object-fit: cover;
@@ -88,6 +98,16 @@ export default {
 		&:first-child {
 			margin-bottom: 5rem;
 		}
+	}
+}
+.about-bio {
+	color: var(--font-secondary);
+}
+.about-links {
+	.about-link {
+		margin-right: 2.5rem;
+		color: var(--accent-light);
+		text-decoration: underline;
 	}
 }
 </style>

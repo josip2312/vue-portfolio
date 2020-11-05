@@ -2,16 +2,16 @@
 	<footer class="footer">
 		<div class="footer-social">
 			<a href="https://github.com/josip2312" target="_blank">
-				<img src="../assets/images/icons/github.svg" alt="Github" />
+				<img src="@/assets/icons/github.svg" alt="Github" />
 			</a>
 			<a href="#">
-				<img src="../assets/images/icons/ig.svg" alt="Instagram" />
+				<img src="@/assets/icons/ig.svg" alt="Instagram" />
 			</a>
 			<a
 				href="https://www.linkedin.com/in/josip-ivancic-b3521a1b4/"
 				target="_blank"
 			>
-				<img src="../assets/images/icons/linkedin.svg" alt="Linkedin" />
+				<img src="@/assets/icons/linkedin.svg" alt="Linkedin" />
 			</a>
 		</div>
 		<div class="footer-copyright">

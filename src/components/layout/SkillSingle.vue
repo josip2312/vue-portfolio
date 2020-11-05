@@ -1,5 +1,10 @@
 <template>
-	<div class="skill spacing" :class="skill.class" v-scrollanimation>
+	<div
+		class="skill spacing"
+		:class="skill.class"
+		v-scrollanimation
+		tabindex="0"
+	>
 		<div class="icon">
 			<img :src="skill.imgSrc" alt="" />
 		</div>
@@ -41,6 +46,7 @@ export default {
 	background-color: var(--secondary);
 
 	padding: 3rem 2rem;
+	border-radius: 0.5rem;
 
 	position: relative;
 
@@ -102,5 +108,8 @@ export default {
 	@media only screen and(max-width: $vp-6) {
 		transform: scale(1);
 	}
+}
+.skill:focus {
+	outline: 1px solid var(--font-secondary);
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-	<div class="showcase">
+	<div class="showcase container">
 		<div class="left spacing">
 			<h1 class="heading-1">Delivering Quality</h1>
 			<div class="desc">
@@ -1217,10 +1217,8 @@ export default {
 <style lang="scss" scoped>
 .showcase {
 	position: relative;
-	width: 80%;
-	max-width: 120rem;
+
 	height: 100%;
-	margin: 0 auto;
 
 	display: grid;
 	grid-template-columns: repeat(12, 1fr);
@@ -1290,7 +1288,9 @@ export default {
 	grid-column: 5 / -1;
 	grid-row: 1 / -1;
 	align-self: center;
-
+	/* display: flex;
+	align-items: center;
+	justify-content: center; */
 	width: 100%;
 
 	svg {
@@ -1310,10 +1310,10 @@ export default {
 		animation: right 750ms ease forwards 750ms;
 	}
 	#man {
-		animation: right 500ms ease forwards 1250ms;
+		animation: right 500ms ease forwards 1200ms;
 	}
 	#laptop {
-		animation: right 500ms ease forwards 1250ms;
+		animation: right 500ms ease forwards 1200ms;
 	}
 
 	@media only screen and(max-width:$vp-9) {
