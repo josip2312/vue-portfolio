@@ -1,8 +1,6 @@
 <template>
-	<div class="work">
-		<h2 class="heading-2" v-scrollanimation>
-			Work
-		</h2>
+	<div class="work container">
+		<h2 class="heading-2" v-scrollanimation>Work</h2>
 
 		<div class="projects">
 			<ProjectSingle
@@ -11,17 +9,21 @@
 				:project="project"
 			/>
 		</div>
-		<router-link :to="{ name: 'WorkDetails' }" class="btn" tag="button">
+		<router-link
+			:to="{ name: 'WorkDetails' }"
+			class="btn btn-main"
+			tag="button"
+		>
 			See more projects
 		</router-link>
 	</div>
 </template>
 
 <script>
-import ProjectSingle from '@/components/layout/ProjectSingle';
+import ProjectSingle from "@/components/layout/ProjectSingle";
 
 export default {
-	name: 'Work',
+	name: "Work",
 	components: {
 		ProjectSingle,
 	},
@@ -29,35 +31,35 @@ export default {
 		return {
 			projects: [
 				{
-					title: 'StudentRides',
+					title: "StudentRides",
 					paragraphOne:
-						'Project made for the final assignment on my university.',
+						"Project made for the final assignment on my university.",
 					paragraphTwo:
-						'A carpooling application built using the MEVN stack, MongoDB, Express, Vue  and Node.js',
-					imgSrc: require('@/assets/images/studentrides.png'),
-					link: 'https://studentrides.tk/',
-					class: 'project-one',
+						"A carpooling application built using the MEVN stack, MongoDB, Express, Vue  and Node.js",
+					imgSrc: require("@/assets/images/studentrides.png"),
+					link: "https://studentrides.tk/",
+					class: "project-one",
 				},
 				{
-					title: 'Hunting agency site',
+					title: "Hunting agency site",
 					paragraphOne:
-						'Site for a local hunting agency still in progress.',
+						"Site for a local hunting agency still in progress.",
 					paragraphTwo:
-						'A simple landing website built with Vue, uses prerendering and lazy-loading images.',
-					imgSrc: require('@/assets/images/sljuka.png'),
-					link: 'https://suspicious-bardeen-eb4d7a.netlify.app',
-					class: 'project-two',
+						"A simple landing website built with Vue, uses prerendering and lazy-loading images.",
+					imgSrc: require("@/assets/images/sljuka.png"),
+					link: "https://suspicious-bardeen-eb4d7a.netlify.app",
+					class: "project-two",
 				},
 				{
-					title: 'MoStan',
+					title: "MoStan",
 					paragraphOne:
-						'Apartment reservations website for a university project.',
+						"Apartment reservations website for a university project.",
 					paragraphTwo:
-						'A simple website using HTML, SASS and Vanilla JavaScript on the frontend and PHP on the backend.',
-					imgSrc: require('@/assets/images/mostan.png'),
-					link: 'http://studenti.sum.ba:82/2019/g13/views/',
+						"A simple website using HTML, SASS and Vanilla JavaScript on the frontend and PHP on the backend.",
+					imgSrc: require("@/assets/images/mostan.png"),
+					link: "http://studenti.sum.ba:82/2019/g13/views/",
 
-					class: 'project-three',
+					class: "project-three",
 				},
 			],
 		};
@@ -71,13 +73,10 @@ export default {
 }
 
 .work {
-	width: 80%;
-	max-width: 120rem;
-	margin: 0 auto;
 	display: flex;
 	flex-direction: column;
 
-	@media only screen and(max-width:$vp-8) {
+	@media only screen and(max-width:$v-8) {
 		width: 90%;
 	}
 }

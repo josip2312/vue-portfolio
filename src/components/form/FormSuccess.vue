@@ -19,9 +19,7 @@
 				</svg>
 			</div>
 			<div class="content">
-				<h3 class="heading-3">
-					Your message has been sent.
-				</h3>
+				<h3 class="heading-3">Your message has been sent.</h3>
 				<p>Thank you for contacting me!</p>
 				<router-link :to="{ name: 'Landing' }">
 					<button class="btn">Back to site</button>
@@ -33,7 +31,7 @@
 
 <script>
 export default {
-	name: 'SubmissionSuccess',
+	name: "SubmissionSuccess",
 };
 </script>
 

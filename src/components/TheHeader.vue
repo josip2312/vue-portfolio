@@ -1,9 +1,9 @@
 <template>
 	<header>
 		<nav>
-			<div class="logo">
+			<router-link :to="{ name: 'Landing' }" class="logo">
 				Logo
-			</div>
+			</router-link>
 			<ul :class="{ isSidebarVisible: isSidebarVisible }">
 				<li>
 					<router-link
@@ -47,12 +47,12 @@
 </template>
 
 <script>
-import ClickOutside from 'vue-click-outside';
-import LightModeButton from '@/components/LightModeButton';
+import ClickOutside from "vue-click-outside";
+import LightModeButton from "@/components/LightModeButton";
 
-import TheMobileNav from '@/components/TheMobileNav';
+import TheMobileNav from "@/components/TheMobileNav";
 export default {
-	name: 'Header',
+	name: "Header",
 	components: {
 		TheMobileNav,
 		LightModeButton,
@@ -62,7 +62,7 @@ export default {
 		return {
 			windowWidth: window.innerWidth,
 			isSidebarVisible: false,
-			currentRoute: '',
+			currentRoute: "",
 		};
 	},
 
@@ -74,20 +74,20 @@ export default {
 			this.isSidebarVisible = false;
 		},
 		sendToIndex() {
-			this.$router.push({ name: 'Index' });
-			this.currentRoute = 'Index';
+			this.$router.push({ name: "Index" });
+			this.currentRoute = "Index";
 		},
 		sendToAbout() {
-			this.$router.push({ name: 'About' });
-			this.currentRoute = 'About';
+			this.$router.push({ name: "About" });
+			this.currentRoute = "About";
 		},
 	},
 
 	mounted() {
 		this.popupItem = this.$el;
-		window.addEventListener('scroll', () => {
-			const header = document.querySelector('header');
-			header.classList.toggle('sticky', window.scrollY > 0);
+		window.addEventListener("scroll", () => {
+			const header = document.querySelector("header");
+			header.classList.toggle("sticky", window.scrollY > 0);
 		});
 	},
 
@@ -114,7 +114,7 @@ header {
 	border-top: 3px solid var(--accent);
 }
 .sticky {
-	background-color: var(--primary-dark);
+	background-color: var(--primary-500);
 }
 nav {
 	position: relative;
@@ -125,13 +125,13 @@ nav {
 	justify-content: space-between;
 	align-items: center;
 	margin: 0 auto;
-	@media only screen and(max-width:$vp-8) {
+	@media only screen and(max-width:$v-8) {
 		width: 90%;
 	}
 	//hamburger menu
 	.nav-toggle {
 		display: none;
-		@media only screen and(max-width:$vp-6) {
+		@media only screen and(max-width:$v-6) {
 			display: inline-block;
 		}
 		position: absolute;
@@ -163,7 +163,7 @@ nav {
 
 		.hamburger::before,
 		.hamburger::after {
-			content: '';
+			content: "";
 			position: absolute;
 			left: 0;
 		}
@@ -200,9 +200,9 @@ nav {
 		display: flex;
 		justify-content: space-between;
 		list-style: none;
-		font-size: 1.7rem;
-		@media only screen and(max-width:$vp-6) {
-			transform: translateX(50vw);
+
+		@media only screen and(max-width:$v-6) {
+			transform: translateX(65vw);
 			transition: transform 250ms ease-in-out;
 			transform-origin: right;
 
@@ -213,9 +213,9 @@ nav {
 			top: 0;
 
 			box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
-			background-color: var(--primary-dark);
+			background-color: var(--primary-500);
 			height: 100vh;
-			width: 50vw;
+			width: 65vw;
 			z-index: 10;
 
 			text-align: center;
@@ -230,24 +230,33 @@ nav {
 
 			a {
 				position: relative;
+				font-weight: 500;
 				padding: 0.5rem 0;
+				color: var(--font-primary);
 			}
+
 			a::after {
-				content: '';
+				content: "";
 				position: absolute;
 
 				left: 0;
-
-				bottom: -1px;
-				height: 2px;
-				border-radius: 1rem;
+				bottom: 0;
+				height: 4px;
+				border-radius: 3px;
 				width: 100%;
+
 				transform: scale(0, 1);
 				transform-origin: left;
 				transition: transform 200ms ease-in-out;
 				background-color: var(--accent);
 			}
-			@media only screen and(max-width:$vp-6 ) {
+			a:hover {
+				text-decoration: underline;
+			}
+			.router-link-exact-active:hover {
+				text-decoration: none;
+			}
+			@media only screen and(max-width:$v-6 ) {
 				font-size: 2.4rem;
 				margin: 0 !important;
 				padding: 2.5rem 0;
@@ -255,9 +264,6 @@ nav {
 		}
 		.about {
 			margin-right: 0;
-		}
-		li:hover {
-			opacity: 0.8;
 		}
 	}
 }

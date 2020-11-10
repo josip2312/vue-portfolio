@@ -1,5 +1,10 @@
 <template>
-	<div class="skill spacing" :class="skill.class" v-scrollanimation>
+	<div
+		class="skill spacing"
+		:class="skill.class"
+		v-scrollanimation
+		tabindex="0"
+	>
 		<div class="icon">
 			<img :src="skill.imgSrc" alt="" />
 		</div>
@@ -16,7 +21,7 @@
 
 <script>
 export default {
-	name: 'SkillSingle',
+	name: "SkillSingle",
 
 	props: {
 		skill: {
@@ -38,9 +43,10 @@ export default {
 	flex-direction: column;
 	align-items: center;
 
-	background-color: var(--secondary);
+	background-color: var(--secondary-400);
 
 	padding: 3rem 2rem;
+	border-radius: 0.5rem;
 
 	position: relative;
 
@@ -57,25 +63,26 @@ export default {
 	}
 	.icon {
 		img {
-			width: 7.5rem;
-			height: 7.5rem;
+			width: 7rem;
+			height: 7rem;
 		}
 	}
 	&-tag {
 		display: inline-block;
-		background-color: var(--tertiary);
+		background-color: var(--secondary-200);
 		padding: 0.5rem 1.2rem;
 		margin: 0.75rem 0.75rem;
 		border-radius: 1rem;
 		font-weight: 500;
-		color: var(--font-secondary);
+		color: var(--font-paragraph);
 
 		transition: background-color 200ms ease-in-out;
-		transform: scale(0.89);
+		transform: scale(0.9);
 		&:hover {
+			--font-primary: #fcfcfc;
 			transform: scale(1);
+			color: var(--font-primary);
 			background-color: var(--accent);
-			color: var(--font-black);
 		}
 	}
 	&-one {
@@ -91,7 +98,7 @@ export default {
 	&-one,
 	&-two,
 	&-three {
-		@media only screen and(max-width: $vp-12) {
+		@media only screen and(max-width: $v-12) {
 			grid-column: 1 / -1;
 		}
 	}
@@ -99,8 +106,11 @@ export default {
 
 .skill:hover {
 	transform: scale(1.05);
-	@media only screen and(max-width: $vp-6) {
+	@media only screen and(max-width: $v-6) {
 		transform: scale(1);
 	}
+}
+.skill:focus {
+	outline: 1px solid var(--font-primary);
 }
 </style>

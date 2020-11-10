@@ -1,5 +1,5 @@
 <template>
-	<div class="skills">
+	<div class="skills container">
 		<div class="heading-2" v-scrollanimation>Skills</div>
 
 		<div class="skills-container">
@@ -13,9 +13,9 @@
 </template>
 
 <script>
-import SkillSingle from '@/components/layout/SkillSingle';
+import SkillSingle from "@/components/layout/SkillSingle";
 export default {
-	name: 'Skills',
+	name: "Skills",
 	components: {
 		SkillSingle,
 	},
@@ -23,22 +23,22 @@ export default {
 		return {
 			skills: [
 				{
-					title: 'Frontend',
-					skills: ['HTML', 'CSS', 'SCSS', 'JavaScript', 'Vue.js'],
-					imgSrc: require('@/assets/images/icons/frontend.svg'),
-					class: 'skill-one',
+					title: "Frontend",
+					skills: ["HTML", "CSS", "SCSS", "JavaScript", "Vue.js"],
+					imgSrc: require("@/assets/icons/frontend.svg"),
+					class: "skill-one",
 				},
 				{
-					title: 'Backend',
-					skills: ['Node.js', 'Express', 'Socket.io', 'MongoDB'],
-					imgSrc: require('@/assets/images/icons/backend.svg'),
-					class: 'skill-two',
+					title: "Backend",
+					skills: ["Node.js", "Express", "Socket.io", "MongoDB"],
+					imgSrc: require("@/assets/icons/backend.svg"),
+					class: "skill-two",
 				},
 				{
-					title: 'Web Design',
-					skills: ['Figma', 'Dribbble', 'Behance', 'Resources'],
-					imgSrc: require('@/assets/images/icons/design.svg'),
-					class: 'skill-three',
+					title: "Web Design",
+					skills: ["Figma", "Dribbble", "Behance", "Resources"],
+					imgSrc: require("@/assets/icons/design.svg"),
+					class: "skill-three",
 				},
 			],
 		};
@@ -48,15 +48,11 @@ export default {
 
 <style lang="scss" scoped>
 .skills {
-	width: 80%;
-	max-width: 120rem;
-	margin: 0 auto;
 	background-color: var(--primary);
-
 	display: grid;
 	grid-template-columns: repeat(11, 1fr);
 
-	@media only screen and(max-width:$vp-8) {
+	@media only screen and(max-width:$v-8) {
 		width: 90%;
 	}
 }
@@ -79,8 +75,9 @@ export default {
 //scroll animations
 .before-enter {
 	opacity: 0;
-	transform: translateY(5rem);
-	transition: transform 800ms ease-in-out, opacity 800ms ease-in-out;
+	transform: translateY(4rem);
+	transition: transform 1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s,
+		opacity 1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s;
 }
 .enter {
 	opacity: 1;
@@ -88,8 +85,9 @@ export default {
 }
 .heading-2.before-enter .before-enter {
 	opacity: 0;
-	transform: translateY(5rem);
-	transition: transform 800ms ease-in-out, opacity 800ms ease-in-out;
+	transform: translateY(4rem);
+	transition: transform 1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s,
+		opacity 1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s;
 }
 .heading-2.enter {
 	opacity: 1;

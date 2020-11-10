@@ -13,11 +13,11 @@
 </template>
 
 <script>
-import TheHeader from '@/components/TheHeader';
-import TheFooter from '@/components/TheFooter';
+import TheHeader from "@/components/TheHeader";
+import TheFooter from "@/components/TheFooter";
 
 export default {
-	name: 'App',
+	name: "App",
 	components: {
 		TheHeader,
 		TheFooter,
@@ -28,8 +28,7 @@ export default {
 <style lang="scss">
 .wrap {
 	min-height: 100vh;
-	background-color: var(--primary);
+	background-color: var(--primary-400);
 	position: relative;
 }
-@import 'assets/sass/base';
 </style>

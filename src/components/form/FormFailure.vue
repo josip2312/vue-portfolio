@@ -17,9 +17,7 @@
 				</svg>
 			</div>
 			<div class="content">
-				<h3 class="heading-3">
-					Something went wrong!
-				</h3>
+				<h3 class="heading-3">Something went wrong!</h3>
 				<p>Try sending the message again</p>
 				<router-link :to="{ name: 'Landing' }">
 					<button class="btn">Try again</button>
@@ -31,7 +29,7 @@
 
 <script>
 export default {
-	name: 'SubmissionSuccess',
+	name: "SubmissionSuccess",
 };
 </script>
 
