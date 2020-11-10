@@ -40,13 +40,13 @@
 
 <script>
 export default {
-	name: 'About',
+	name: "About",
 };
 </script>
 
 <style lang="scss" scoped>
 .about-container {
-	background-color: var(--primary);
+	background-color: var(--primary-400);
 	display: flex;
 	justify-content: center;
 	min-height: 100vh;
@@ -57,7 +57,7 @@ export default {
 
 	padding: 10rem 0;
 
-	@media only screen and(max-width:$vp-8) {
+	@media only screen and(max-width:$v-8) {
 		width: 90%;
 		flex-direction: column;
 	}
@@ -66,6 +66,10 @@ export default {
 	flex: 1;
 	margin-right: 2.5rem;
 	align-self: center;
+
+	opacity: 0;
+	animation: appear 800ms ease-in-out forwards;
+
 	.about-image {
 		width: 100%;
 		max-width: 50rem;
@@ -84,6 +88,10 @@ export default {
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
+
+	opacity: 0;
+	animation: left 500ms ease forwards 600ms;
+
 	.about-heading {
 		max-width: 40rem;
 		.heading-2 {
@@ -93,7 +101,7 @@ export default {
 }
 .about-left,
 .about-right {
-	@media only screen and(max-width:$vp-8) {
+	@media only screen and(max-width:$v-8) {
 		margin: 0;
 		&:first-child {
 			margin-bottom: 5rem;
@@ -101,13 +109,18 @@ export default {
 	}
 }
 .about-bio {
-	color: var(--font-secondary);
+	color: var(--font-paragraph);
 }
 .about-links {
 	.about-link {
 		margin-right: 2.5rem;
-		color: var(--accent-light);
+		color: var(--accent-2);
 		text-decoration: underline;
+	}
+}
+.light-mode {
+	.about-link {
+		color: var(--accent);
 	}
 }
 </style>

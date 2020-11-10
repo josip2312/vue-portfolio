@@ -3,33 +3,67 @@
 
 	border-radius: 1rem;
 	background-color: var(--accent);
+	color: var(--font-primary);
 	padding: 0.7em 1.3em;
 
 	text-decoration: none;
-	letter-spacing: 2px;
-	color: #221b07;
+	letter-spacing: 1px;
+
 	font-weight: 700;
 	font-size: 1.7rem;
 
 	text-transform: uppercase;
 	text-align: center;
-	border: 2px solid var(--accent);
+	border: 1px solid var(--accent);
 
 	cursor: pointer;
 	transition: opacity 200ms ease-in-out;
 }
+.btn-main {
+	--font-primary: #fcfcfc;
+}
 .btn-sec {
 	background-color: transparent;
 	color: var(--font-primary);
+	transform-origin: left;
+	transition: background-color 200ms ease-in-out;
 }
 .btn-sec:hover {
-	opacity: 0.9;
+	--font-primary: #fcfcfc;
+	color: var(--font-primary);
+	background-color: var(--accent);
 }
 .btn:hover {
 	opacity: 0.9;
 }
 .btn:focus {
-	outline: 1px solid var(--font-secondary);
+	outline: 1px solid var(--font-primary);
+}
+
+.btn-tertiary {
+	background: none;
+	border: none;
+	color: var(--accent-2);
+	display: flex;
+	align-items: center;
+
+	font-size: 1.7rem;
+	cursor: pointer;
+	span {
+		margin-right: 1.5rem;
+	}
+	svg {
+		width: 2.75rem;
+		transition: transform 200ms ease-in-out;
+	}
+}
+.btn-tertiary:hover {
+	svg {
+		transform: scaleX(1.25) translateX(0.4rem);
+	}
+}
+.btn-tertiary:focus {
+	outline: 1px solid var(--font-primary);
 }
 a {
 	text-decoration: none;

@@ -16,13 +16,13 @@
 </template>
 
 <script>
-import AppShowcase from '@/components/landing/AppShowcase';
-import AppWork from '@/components/landing/AppWork';
-import AppSkills from '@/components/landing/AppSkills';
-import AppContact from '@/components/landing/AppContact';
+import AppShowcase from "@/components/landing/AppShowcase";
+import AppWork from "@/components/landing/AppWork";
+import AppSkills from "@/components/landing/AppSkills";
+import AppContact from "@/components/landing/AppContact";
 
 export default {
-	name: 'Landing',
+	name: "Landing",
 	components: {
 		AppShowcase,
 		AppWork,
@@ -35,18 +35,18 @@ export default {
 <style lang="scss" scoped>
 #showcase {
 	height: 100vh;
-	background-color: var(--primary);
+	background-color: var(--primary-400);
 }
 #work {
-	background-color: var(--secondary);
+	background-color: var(--secondary-400);
 	padding: 10rem 0;
 }
 #skills {
 	padding: 10rem 0;
-	background-color: var(--primary);
+	background-color: var(--primary-400);
 }
 #contact {
 	padding: 10rem 0;
-	background-color: var(--secondary);
+	background-color: var(--secondary-400);
 }
 </style>
