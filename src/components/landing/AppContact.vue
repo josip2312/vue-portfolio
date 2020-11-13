@@ -239,6 +239,7 @@ export default {
 
 				margin-bottom: 1rem;
 			}
+
 			input {
 				color: var(--font-paragraph);
 
@@ -250,6 +251,7 @@ export default {
 
 				margin-bottom: 2rem;
 			}
+
 			textarea {
 				border-radius: 3px;
 				color: var(--font-paragraph);

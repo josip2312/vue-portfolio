@@ -77,7 +77,7 @@ export default {
 	left: 0;
 	width: 100%;
 
-	background-color: var(--primary-500);
+	background-color: var(--primary-600);
 	z-index: 100;
 
 	a {

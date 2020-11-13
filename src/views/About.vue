@@ -3,7 +3,7 @@
 		<section class="about container">
 			<div class="about-left">
 				<div class="about-image">
-					<img src="@/assets/images/user.jpg" alt="" />
+					<img src="@/assets/images/me.jpeg" alt="A picture of me" />
 				</div>
 			</div>
 			<div class="about-right">
