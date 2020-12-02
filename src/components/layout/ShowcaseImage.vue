@@ -180,10 +180,10 @@ svg {
 	transform: translateX(7.5rem);
 	z-index: 1;
 
-	@media only screen and(max-width:$v-9) {
+	@include mq-max($v-9) {
 		transform: scale(1) translateX(0);
 	}
-	@media only screen and(max-width:$v-6) {
+	@include mq-max($v-3) {
 		transform: scale(1.2) translateX(0);
 	}
 

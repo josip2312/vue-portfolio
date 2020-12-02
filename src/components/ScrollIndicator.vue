@@ -18,15 +18,15 @@ export default {
 	left: 50%;
 	transform: translateX(-50%);
 	bottom: 10rem;
-	box-shadow: inset 0 0 0 1px var(--font-primary);
+	box-shadow: inset 0 0 0 2px var(--font-primary);
 	border-radius: 25px;
 	height: 7rem;
 	width: 4rem;
 	opacity: 0;
-	@media only screen and(max-width:$v-9) {
+	@include mq-max($v-9) {
 		bottom: 5rem;
 	}
-	@media only screen and(max-width:$v-6) {
+	@include mq-max($v-6) {
 		display: none;
 		bottom: 10rem;
 	}
@@ -34,11 +34,10 @@ export default {
 .scroll-indicator::before {
 	position: absolute;
 	left: 50%;
-
-	margin-left: -0.45rem;
+	transform: translateX(-50%);
 	content: "";
-	width: 1rem;
-	height: 1rem;
+	width: 1.1rem;
+	height: 1.1rem;
 
 	border-radius: 1rem;
 	background: var(--font-primary);
@@ -48,6 +47,7 @@ export default {
 	content: "Scroll";
 	position: absolute;
 	left: 50%;
+	letter-spacing: 2px;
 	transform: translateX(-50%);
 	bottom: -3rem;
 }
@@ -58,7 +58,7 @@ export default {
 	}
 	100% {
 		opacity: 0;
-		transform: translateY(4rem);
+		transform: translate(-50%, 4rem);
 	}
 }
 </style>

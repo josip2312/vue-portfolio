@@ -1,8 +1,8 @@
 <template>
 	<header>
-		<nav>
-			<router-link :to="{ name: 'Landing' }" class="logo">
-				Logo
+		<nav class="container">
+			<router-link :to="{ name: 'Landing' }" class="logo" tag="h2">
+				Ivancic Josip
 			</router-link>
 			<ul :class="{ isSidebarVisible: isSidebarVisible }">
 				<li>
@@ -30,16 +30,11 @@
 			</ul>
 			<LightModeButton />
 
-			<button
-				class="nav-toggle"
-				@click="showSidebar"
-				v-click-outside="hideSidebar"
-			>
-				<span
-					class="hamburger"
-					:class="{ active: isSidebarVisible }"
-				></span>
-			</button>
+			<HamburgerMenu
+				@click.native="toggleSidebar"
+				@hide-sidebar="isSidebarVisible = false"
+				:isSidebarVisible="isSidebarVisible"
+			/>
 		</nav>
 
 		<TheMobileNav />
@@ -47,8 +42,8 @@
 </template>
 
 <script>
-import ClickOutside from "vue-click-outside";
 import LightModeButton from "@/components/LightModeButton";
+import HamburgerMenu from "@/components/HamburgerMenu";
 
 import TheMobileNav from "@/components/TheMobileNav";
 export default {
@@ -56,6 +51,7 @@ export default {
 	components: {
 		TheMobileNav,
 		LightModeButton,
+		HamburgerMenu,
 	},
 
 	data() {
@@ -67,32 +63,19 @@ export default {
 	},
 
 	methods: {
-		showSidebar() {
+		toggleSidebar() {
 			this.isSidebarVisible = !this.isSidebarVisible;
 		},
 		hideSidebar() {
 			this.isSidebarVisible = false;
 		},
-		sendToIndex() {
-			this.$router.push({ name: "Index" });
-			this.currentRoute = "Index";
-		},
-		sendToAbout() {
-			this.$router.push({ name: "About" });
-			this.currentRoute = "About";
-		},
 	},
 
 	mounted() {
-		this.popupItem = this.$el;
 		window.addEventListener("scroll", () => {
 			const header = document.querySelector("header");
 			header.classList.toggle("sticky", window.scrollY > 0);
 		});
-	},
-
-	directives: {
-		ClickOutside,
 	},
 };
 </script>
@@ -118,73 +101,10 @@ header {
 }
 nav {
 	position: relative;
-	width: 80%;
-	max-width: 120rem;
 
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	margin: 0 auto;
-	@media only screen and(max-width:$v-8) {
-		width: 90%;
-	}
-	//hamburger menu
-	.nav-toggle {
-		display: none;
-		@media only screen and(max-width:$v-6) {
-			display: inline-block;
-		}
-		position: absolute;
-		right: 0%;
-		transform: translateX(5%);
-
-		border: 0;
-		outline: none;
-		border-radius: 0.25em 0 0 0.25em;
-		background-color: transparent;
-		padding: 1em 0.5em;
-		cursor: pointer;
-		z-index: 30;
-
-		.hamburger {
-			position: relative;
-			display: block;
-		}
-		//hamburger animations
-		.hamburger,
-		.hamburger::before,
-		.hamburger::after {
-			height: 3px;
-			width: 2em;
-			border-radius: 1rem;
-			background-color: var(--font-primary);
-			transition: transform 250ms ease-in-out, opacity 250ms linear;
-		}
-
-		.hamburger::before,
-		.hamburger::after {
-			content: "";
-			position: absolute;
-			left: 0;
-		}
-
-		.hamburger::before {
-			bottom: 1rem;
-		}
-		.hamburger::after {
-			top: 1rem;
-		}
-
-		.hamburger.active {
-			transform: rotate(135deg);
-		}
-		.hamburger.active::before {
-			opacity: 0;
-		}
-		.hamburger.active::after {
-			transform: rotate(90deg) translate(-1rem);
-		}
-	}
 
 	.isSidebarVisible {
 		opacity: 1;
@@ -192,8 +112,12 @@ nav {
 	}
 
 	.logo {
+		font-family: "Vegan Style";
 		font-size: 2rem;
-		padding: 1.5rem 0;
+
+		font-weight: 400;
+		line-height: 1.2;
+		margin: 1.5rem 0;
 	}
 
 	ul {
@@ -201,7 +125,7 @@ nav {
 		justify-content: space-between;
 		list-style: none;
 
-		@media only screen and(max-width:$v-6) {
+		@include mq-max($v-6) {
 			transform: translateX(65vw);
 			transition: transform 250ms ease-in-out;
 			transform-origin: right;
@@ -223,10 +147,7 @@ nav {
 		li {
 			cursor: pointer;
 			transition: opacity 0.2s ease-out;
-
-			& {
-				margin-right: 4rem;
-			}
+			margin-right: 4rem;
 
 			a {
 				position: relative;
@@ -240,14 +161,14 @@ nav {
 				position: absolute;
 
 				left: 0;
-				bottom: 0;
+				bottom: -0.25rem;
 				height: 4px;
-				border-radius: 3px;
+				border-radius: var(--br);
 				width: 100%;
 
 				transform: scale(0, 1);
 				transform-origin: left;
-				transition: transform 200ms ease-in-out;
+				transition: transform 250ms ease-in-out;
 				background-color: var(--accent);
 			}
 			a:hover {
@@ -256,9 +177,9 @@ nav {
 			.router-link-exact-active:hover {
 				text-decoration: none;
 			}
-			@media only screen and(max-width:$v-6 ) {
+			@include mq-max($v-6) {
 				font-size: 2.4rem;
-				margin: 0 !important;
+				margin: 0;
 				padding: 2.5rem 0;
 			}
 		}

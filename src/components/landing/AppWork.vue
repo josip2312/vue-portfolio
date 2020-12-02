@@ -1,6 +1,6 @@
 <template>
 	<div class="work container">
-		<h2 class="heading-2" v-scrollanimation>Work</h2>
+		<h2 class="heading-2" data-aos="fade">Work</h2>
 
 		<div class="projects">
 			<ProjectSingle
@@ -20,6 +20,8 @@
 </template>
 
 <script>
+import { projectsShowcase } from "@/data/projects";
+
 import ProjectSingle from "@/components/layout/ProjectSingle";
 
 export default {
@@ -29,56 +31,16 @@ export default {
 	},
 	data() {
 		return {
-			projects: [
-				{
-					title: "StudentRides",
-					paragraphOne:
-						"Project made for the final assignment on my university.",
-					paragraphTwo:
-						"A carpooling application built using the MEVN stack, MongoDB, Express, Vue  and Node.js",
-					imgSrc: require("@/assets/images/studentrides.png"),
-					link: "https://studentrides.tk/",
-					class: "project-one",
-				},
-				{
-					title: "Hunting agency site",
-					paragraphOne:
-						"Site for a local hunting agency still in progress.",
-					paragraphTwo:
-						"A simple landing website built with Vue, uses prerendering and lazy-loading images.",
-					imgSrc: require("@/assets/images/sljuka.png"),
-					link: "https://suspicious-bardeen-eb4d7a.netlify.app",
-					class: "project-two",
-				},
-				{
-					title: "MoStan",
-					paragraphOne:
-						"Apartment reservations website for a university project.",
-					paragraphTwo:
-						"A simple website using HTML, SASS and Vanilla JavaScript on the frontend and PHP on the backend.",
-					imgSrc: require("@/assets/images/mostan.png"),
-					link: "http://studenti.sum.ba:82/2019/g13/views/",
-
-					class: "project-three",
-				},
-			],
+			projects: projectsShowcase,
 		};
 	},
 };
 </script>
 
 <style lang="scss" scoped>
-.heading-2.enter {
-	animation: up 0.8s ease-in-out forwards;
-}
-
 .work {
 	display: flex;
 	flex-direction: column;
-
-	@media only screen and(max-width:$v-8) {
-		width: 90%;
-	}
 }
 
 .projects {

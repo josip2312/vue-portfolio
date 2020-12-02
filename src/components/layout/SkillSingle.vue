@@ -2,8 +2,8 @@
 	<div
 		class="skill spacing"
 		:class="skill.class"
-		v-scrollanimation
 		tabindex="0"
+		data-aos="fade-up"
 	>
 		<div class="icon">
 			<img :src="skill.imgSrc" alt="" />
@@ -29,31 +29,23 @@ export default {
 			required: true,
 		},
 	},
-	methods: {
-		expandSkills(skill) {
-			skill.isExpanded = !skill.isExpanded;
-		},
-	},
 };
 </script>
 
 <style lang="scss" scoped>
 .skill {
+	position: relative;
+
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 
 	background-color: var(--secondary-400);
-
 	padding: 3rem 2rem;
-	border-radius: 0.5rem;
-
-	position: relative;
-
-	transform: scale(1);
-	backface-visibility: hidden;
-	transition: transform 200ms ease-in-out;
+	border-radius: var(--br);
 	font-size: 1.8rem;
+
+	transition: transform 250ms cubic-bezier(0.49, 0.07, 0.36, 1);
 	&-desc {
 		text-align: center;
 		.heading-4 {
@@ -73,6 +65,7 @@ export default {
 		padding: 0.5rem 1.2rem;
 		margin: 0.75rem 0.75rem;
 		border-radius: 1rem;
+
 		font-weight: 500;
 		color: var(--font-paragraph);
 
@@ -85,30 +78,9 @@ export default {
 			background-color: var(--accent);
 		}
 	}
-	&-one {
-		grid-column: 1 / 4;
-	}
-	&-two {
-		grid-column: 5 / 8;
-	}
-	&-three {
-		grid-column: 9 / -1;
-	}
-
-	&-one,
-	&-two,
-	&-three {
-		@media only screen and(max-width: $v-12) {
-			grid-column: 1 / -1;
-		}
-	}
 }
 
 .skill:hover {
-	transform: scale(1.05);
-	@media only screen and(max-width: $v-6) {
-		transform: scale(1);
-	}
 }
 .skill:focus {
 	outline: 1px solid var(--font-primary);

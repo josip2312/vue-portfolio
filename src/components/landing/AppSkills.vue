@@ -1,6 +1,6 @@
 <template>
 	<div class="skills container">
-		<div class="heading-2" v-scrollanimation>Skills</div>
+		<div class="heading-2" data-aos="fade">Skills</div>
 
 		<div class="skills-container">
 			<SkillSingle
@@ -13,6 +13,7 @@
 </template>
 
 <script>
+import { skills } from "@/data/skills";
 import SkillSingle from "@/components/layout/SkillSingle";
 export default {
 	name: "Skills",
@@ -21,7 +22,7 @@ export default {
 	},
 	data() {
 		return {
-			skills: [
+			skills: skills /* [
 				{
 					title: "Frontend",
 					skills: ["HTML", "CSS", "SCSS", "JavaScript", "Vue.js"],
@@ -40,7 +41,7 @@ export default {
 					imgSrc: require("@/assets/icons/design.svg"),
 					class: "skill-three",
 				},
-			],
+			], */,
 		};
 	},
 };
@@ -49,18 +50,8 @@ export default {
 <style lang="scss" scoped>
 .skills {
 	background-color: var(--primary);
-	display: grid;
-	grid-template-columns: repeat(11, 1fr);
-
-	@media only screen and(max-width:$v-8) {
-		width: 90%;
-	}
 }
 
-.heading-2 {
-	grid-row: 1;
-	grid-column: 1;
-}
 .skills-container {
 	padding-top: 7.5rem;
 	align-self: center;
@@ -68,29 +59,12 @@ export default {
 	grid-row: 2;
 
 	display: grid;
-	row-gap: 3.5rem;
-	grid-template-columns: repeat(11, 1fr);
-}
-
-//scroll animations
-.before-enter {
-	opacity: 0;
-	transform: translateY(4rem);
-	transition: transform 1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s,
-		opacity 1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s;
-}
-.enter {
-	opacity: 1;
-	transform: translateY(0) scale(1);
-}
-.heading-2.before-enter .before-enter {
-	opacity: 0;
-	transform: translateY(4rem);
-	transition: transform 1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s,
-		opacity 1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s;
-}
-.heading-2.enter {
-	opacity: 1;
-	transform: translateY(0);
+	column-gap: 5rem;
+	grid-template-columns: repeat(3, 1fr);
+	@include mq-max($v-10) {
+		column-gap: 0;
+		grid-template-columns: 1fr;
+		row-gap: 5rem;
+	}
 }
 </style>

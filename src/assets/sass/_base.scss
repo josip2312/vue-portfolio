@@ -4,23 +4,21 @@ html {
 	font-size: 62.5%;
 	scroll-behavior: smooth;
 
-	@media only screen and(min-width:$v-17) {
-		font-size: 65%;
+	@include mq-min($v-20) {
+		font-size: 70%;
+	}
+	@include mq-min($v-25) {
+		font-size: 85%;
 	}
 
-	@media only screen and(min-width:$v-20) {
-		font-size: 75%;
+	@include mq-max($v-12) {
+		font-size: 57.5%;
 	}
-	@media only screen and(min-width:$v-25) {
-		font-size: 90%;
-	}
-	@media only screen and(max-width:$v-12) {
-		font-size: 60%;
-	}
-	@media only screen and(max-width:$v-8) {
+
+	@include mq-max($v-8) {
 		font-size: 55%;
 	}
-	@media only screen and(max-width:$v-6) {
+	@include mq-max($v-6) {
 		font-size: 50%;
 	}
 }
@@ -37,7 +35,8 @@ body {
 
 .heading-1 {
 	font-family: 'Lato', sans-serif;
-	font-size: 6rem;
+
+	font-size: 6.5rem;
 	line-height: 1;
 }
 .heading-2 {
@@ -50,9 +49,9 @@ body {
 	&::after {
 		content: '';
 		position: absolute;
-		top: 3.5rem;
+		top: 3.25rem;
 		left: 0;
-		height: 3px;
+		height: 4px;
 		width: 5.5rem;
 		border-radius: 3rem;
 		background-color: var(--accent);
@@ -60,7 +59,7 @@ body {
 }
 .heading-3 {
 	font-family: 'Lato', sans-serif;
-	font-size: 3.5rem;
+	font-size: 3.75rem;
 	line-height: 0.9;
 }
 .heading-4 {

@@ -23,6 +23,9 @@ import AppContact from "@/components/landing/AppContact";
 
 export default {
 	name: "Landing",
+	metaInfo: {
+		title: "Ivancic Josip's site",
+	},
 	components: {
 		AppShowcase,
 		AppWork,
@@ -38,8 +41,8 @@ export default {
 	background-color: var(--primary-400);
 }
 #work {
-	background-color: var(--secondary-400);
 	padding: 10rem 0;
+	background-color: var(--secondary-400);
 }
 #skills {
 	padding: 10rem 0;

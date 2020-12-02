@@ -1,6 +1,6 @@
 <template>
 	<div class="contact container">
-		<div class="contact-left" v-scrollanimation>
+		<div class="contact-left" data-aos="fade-up">
 			<div class="contact-left-top">
 				<h3 class="heading-3">Get in touch</h3>
 				<div class="message">Send me a message</div>
@@ -41,7 +41,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="contact-right" v-scrollanimation>
+		<div class="contact-right" data-aos="fade-up">
 			<form
 				class="form"
 				name="contact-form"
@@ -54,10 +54,10 @@
 					<div class="form-group">
 						<label for="name">Name</label>
 						<input
-							type="text"
+							v-model="form.name"
 							name="name"
 							id="name"
-							v-model="form.name"
+							type="text"
 							required
 							autocomplete="on"
 						/>
@@ -65,10 +65,10 @@
 					<div class="form-group">
 						<label for="email">Email</label>
 						<input
-							type="email"
+							v-model="form.email"
 							name="email"
 							id="email"
-							v-model="form.email"
+							type="email"
 							required
 							autocomplete="on"
 						/>
@@ -78,11 +78,11 @@
 				<div class="form-group">
 					<label for="message">Message</label>
 					<textarea
+						v-model="form.message"
 						name="message"
 						id="message"
 						cols="10"
 						rows="6"
-						v-model="form.message"
 						required
 						minlength="10"
 						maxlength="200"
@@ -146,22 +146,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.before-enter {
-	opacity: 0;
-	transform: translateY(4rem);
-	transition: transform 1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s,
-		opacity 1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s;
-}
-.enter {
-	opacity: 1;
-	transform: translateY(0);
-}
 .contact {
 	display: flex;
 
 	justify-content: space-between;
-	@media only screen and(max-width:$v-9) {
-		width: 90%;
+	@include mq-max($v-10) {
 		flex-direction: column;
 	}
 }
@@ -170,14 +159,15 @@ export default {
 	flex: 1;
 	display: flex;
 	flex-direction: column;
-	@media only screen and(max-width:$v-9) {
+
+	@include mq-max($v-10) {
 		flex-direction: row;
 		padding-bottom: 5rem;
 	}
-
-	@media only screen and(max-width:$v-6) {
+	@include mq-max($v-6) {
 		flex-direction: column;
 	}
+
 	.heading-3 {
 		margin-bottom: 2rem;
 	}
@@ -186,7 +176,7 @@ export default {
 	}
 	&-top {
 		flex: 1;
-		@media only screen and(max-width:$v-6) {
+		@include mq-max($v-6) {
 			margin-bottom: 2rem;
 		}
 	}
