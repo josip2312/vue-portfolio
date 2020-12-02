@@ -77,7 +77,7 @@ export default {
 		animation: up 750ms ease-out forwards 500ms;
 
 		p {
-			color: var(--font-secondary);
+			color: var(--font-primary);
 			margin: 2.5rem 0;
 			font-size: 1.8rem;
 		}
