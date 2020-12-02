@@ -1,13 +1,13 @@
 <template>
-	<div class="project" :class="project.class" v-scrollanimation>
-		<div class="project-left spacing-sm" v-scrollanimation>
+	<article class="project" :class="project.class" data-aos="fade-up">
+		<div class="project-left spacing-sm">
 			<h3 class="heading-3">{{ project.title }}</h3>
 			<p class="project-desc">
 				{{ project.paragraphOne }}
 			</p>
 			<p class="project-desc">{{ project.paragraphTwo }}</p>
 			<a class="btn-tertiary" :href="project.link" target="_blank">
-				<span> See more </span>
+				<span> Visit site </span>
 
 				<svg
 					class="w-6 h-6"
@@ -25,15 +25,10 @@
 				</svg>
 			</a>
 		</div>
-		<a
-			:href="project.link"
-			target="_blank"
-			class="project-right"
-			v-scrollanimation
-		>
+		<a :href="project.link" target="_blank" class="project-right">
 			<img :src="project.imgSrc" alt="Project" />
 		</a>
-	</div>
+	</article>
 </template>
 
 <script>
@@ -53,7 +48,7 @@ export default {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	@media only screen and(max-width:$v-9) {
+	@include mq-max($v-10) {
 		flex-direction: column;
 	}
 
@@ -61,6 +56,10 @@ export default {
 		max-width: 35ch;
 		margin-right: 2.5rem;
 		color: var(--font-paragraph);
+		@include mq-max($v-10) {
+			max-width: 50rem;
+			margin-right: 0;
+		}
 	}
 
 	&-left {
@@ -69,7 +68,7 @@ export default {
 		display: flex;
 		flex-direction: column;
 
-		@media only screen and(max-width:$v-9) {
+		@include mq-max($v-10) {
 			text-align: center;
 			margin-bottom: 3rem;
 		}
@@ -80,46 +79,43 @@ export default {
 		.btn-tertiary {
 			margin-top: 3rem;
 			align-self: flex-start;
-			@media only screen and(max-width:$v-9) {
+			@include mq-max($v-10) {
 				align-self: center;
 			}
 		}
 	}
 	&-right {
-		border-radius: 1rem;
+		border-radius: var(--br);
 		background-color: var(--secondary-500);
 
 		padding: 2.5rem;
-		flex: 1.2;
-		@media only screen and(max-width:$v-6) {
+		flex: 1.25;
+		@include mq-max($v-6) {
 			padding: 1rem;
 		}
+
 		img {
 			width: 100%;
 			height: 100%;
 			object-fit: cover;
-			border-radius: 1rem;
+			border-radius: var(--br);
 
 			backface-visibility: hidden;
-			transform: scale(0.975);
-			transition: opacity 200ms ease-in-out, transform 200ms ease-in-out;
+			transform: scale(0.98);
+			transition: opacity 250ms cubic-bezier(0.49, 0.07, 0.36, 1),
+				transform 200ms cubic-bezier(0.49, 0.07, 0.36, 1);
 		}
 		img:hover {
 			transform: scale(1);
-			@media only screen and(max-width:$v-6) {
-				transform: scale(0.975);
+			@include mq-max($v-6) {
+				transform: scale(0.99);
 			}
-		}
-	}
-	@media only screen and(max-width:$v-9) {
-		&-desc {
-			max-width: 40ch;
-			margin-right: 0;
 		}
 	}
 }
 .project-two {
 	flex-direction: row-reverse;
+
 	.project-left {
 		margin-left: 2.5rem;
 	}
@@ -134,10 +130,11 @@ export default {
 		margin-left: 3rem;
 	}
 
-	@media only screen and(max-width:$v-9) {
+	@include mq-max($v-10) {
 		flex-direction: column;
+
 		&-desc {
-			margin-right: 0 !important;
+			margin-right: 0;
 		}
 		.project-left {
 			margin-left: 0;
@@ -150,20 +147,5 @@ export default {
 }
 .project-right:focus {
 	outline: 1px solid var(--font-primary);
-}
-
-.project-one.before-enter,
-.project-three.before-enter,
-.project-two.before-enter {
-	opacity: 0;
-	transform: translateY(4rem);
-	transition: transform 1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s,
-		opacity 1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s;
-}
-.project-one.enter,
-.project-three.enter,
-.project-two.enter {
-	opacity: 1;
-	transform: translateY(0);
 }
 </style>

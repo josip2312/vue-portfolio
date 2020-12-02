@@ -65,7 +65,7 @@ export default {
 
 <style lang="scss" scoped>
 .mobile-nav {
-	@media only screen and(min-width:$v-6 ) {
+	@include mq-min($v-6) {
 		display: none;
 	}
 	display: flex;

@@ -10,13 +10,12 @@
 				<div class="about-heading spacing-lg">
 					<h2 class="heading-2">About me</h2>
 					<p class="about-bio">
-						Lorem ipsum dolor sit amet consectetur adipisicing elit.
-						Praesentium sapiente aperiam molestiae eos earum porro
-						fugit nisi ad ex. Quibusdam.
+						Highly invested and passionate about creating high
+						quality websites. Recently received a Bachelor's degree
+						in Computer Science at the University of Mostar.
 					</p>
 					<p class="about-bio">
-						Lorem ipsum dolor sit amet consectetur adipisicing elit.
-						Doloribus, ipsa!
+						Currently actively searching for a job.
 					</p>
 					<div class="about-links">
 						<a
@@ -41,6 +40,10 @@
 <script>
 export default {
 	name: "About",
+	metaInfo: {
+		title: "Josip Ivancic",
+		titleTemplate: "%s | About me",
+	},
 };
 </script>
 
@@ -57,8 +60,7 @@ export default {
 
 	padding: 10rem 0;
 
-	@media only screen and(max-width:$v-8) {
-		width: 90%;
+	@include mq-max($v-9) {
 		flex-direction: column;
 	}
 }
@@ -101,8 +103,9 @@ export default {
 }
 .about-left,
 .about-right {
-	@media only screen and(max-width:$v-8) {
+	@include mq-max($v-9) {
 		margin: 0;
+
 		&:first-child {
 			margin-bottom: 5rem;
 		}
